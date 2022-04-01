@@ -9,6 +9,7 @@ import com.lukeware.cotacao.dto.CotacaoDataAccessRequest;
 import com.lukeware.cotacao.dto.CotacaoRequest;
 import com.lukeware.entities.CotacaoBuilder;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 /**
@@ -25,22 +26,30 @@ class CotacaoInteractor implements ICotacaoIteractorCreate {
   }
 
   @Override
-  public void criar(CotacaoRequest cotacaoRequest) {
+  public void criar(final CotacaoRequest cotacaoRequest) {
     this.cotacaoAdapter.buscar(cotacaoRequest).forEach(this::criar);
   }
 
-  private void criar(ICotacaoResponse cotacaoResponse) {
-    CotacaoDataAccessRequest cotacaoDataAccessRequest = null;
+  private void criar(final ICotacaoResponse cotacaoResponse) {
 
-    Optional<ICotacaoMapper> optCotacao = this.cotacaoDataAccess.buscar(cotacaoDataAccessRequest);
+    var cotacao = CotacaoBuilder.builder()
+                                .cotacaoCompra(cotacaoResponse.getCotacaoCompra())
+                                .cotacaoVenda(cotacaoResponse.getCotacaoVenda())
+                                .dataHoraCotacao(cotacaoResponse.getDataHoraCotacao())
+                                .build();
+
+    final CotacaoDataAccessRequest cotacaoDataAccessRequest = CotacaoDataAccessRequest
+        .Builder.builder()
+                .cotacaoCompra(cotacaoResponse.getCotacaoCompra())
+                .cotacaoVenda(cotacaoResponse.getCotacaoVenda())
+                .dataHoraCotacao(cotacaoResponse.getDataHoraCotacao())
+                .tempoDaRequisicao(LocalDateTime.now())
+                .dataCotacao(cotacao.getDataCotacao())
+                .build();
+
+    final Optional<ICotacaoMapper> optCotacao = this.cotacaoDataAccess.buscar(cotacaoDataAccessRequest);
 
     if (!optCotacao.isPresent()) {
-      var cotacao = CotacaoBuilder.builder()
-                                  .cotacaoCompra(cotacaoResponse.getCotacaoCompra())
-                                  .cotacaoVenda(cotacaoResponse.getCotacaoVenda())
-                                  .dataHoraCotacao(cotacaoResponse.getDataHoraCotacao())
-                                  .build();
-
       cotacao.validarInformacoes();
       this.cotacaoDataAccess.salvar(cotacaoDataAccessRequest);
     }
