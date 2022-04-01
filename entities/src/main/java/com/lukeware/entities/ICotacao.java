@@ -1,14 +1,19 @@
 package com.lukeware.entities;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 /**
  * @author Diego Morais
  */
 public interface ICotacao {
-  double getCotacaoCompra();
+  Double getCotacaoCompra();
 
-  double getCotacaoVenda();
+  Double getCotacaoVenda();
 
   LocalDateTime getDataHoraCotacao();
+
+  void validarInformacoes();
+
+  LocalDate getDataCotacao();
 }

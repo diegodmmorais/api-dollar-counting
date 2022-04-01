@@ -1,5 +1,6 @@
 package com.lukeware.entities;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -7,29 +8,41 @@ import java.util.Objects;
  * @author Diego Morais
  */
 final class Cotacao implements ICotacao {
-  private double cotacaoCompra;
-  private double cotacaoVenda;
+  private Double cotacaoCompra;
+  private Double cotacaoVenda;
   private LocalDateTime dataHoraCotacao;
 
-  Cotacao(double cotacaoCompra, double cotacaoVenda, LocalDateTime dataHoraCotacao) {
+  Cotacao(Double cotacaoCompra, Double cotacaoVenda, LocalDateTime dataHoraCotacao) {
     this.cotacaoCompra = cotacaoCompra;
     this.cotacaoVenda = cotacaoVenda;
     this.dataHoraCotacao = dataHoraCotacao;
   }
 
   @Override
-  public double getCotacaoCompra() {
+  public Double getCotacaoCompra() {
     return cotacaoCompra;
   }
 
   @Override
-  public double getCotacaoVenda() {
+  public Double getCotacaoVenda() {
     return cotacaoVenda;
   }
 
   @Override
   public LocalDateTime getDataHoraCotacao() {
     return dataHoraCotacao;
+  }
+
+  @Override
+  public void validarInformacoes() {
+    Objects.requireNonNull(this.cotacaoCompra, "Cotação de compra é obrigatório");
+    Objects.requireNonNull(this.cotacaoVenda, "Cotação de venda é obrigatório");
+    Objects.requireNonNull(this.dataHoraCotacao, "Data da cotação é obrigatório");
+  }
+
+  @Override
+  public LocalDate getDataCotacao() {
+    return this.dataHoraCotacao.toLocalDate();
   }
 
   @Override
