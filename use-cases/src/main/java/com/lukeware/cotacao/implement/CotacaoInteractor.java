@@ -1,5 +1,12 @@
-package com.lukeware.cotacao;
+package com.lukeware.cotacao.implement;
 
+import com.lukeware.cotacao.ICotacaoAdapter;
+import com.lukeware.cotacao.ICotacaoDataAccess;
+import com.lukeware.cotacao.ICotacaoIteractorCreate;
+import com.lukeware.cotacao.ICotacaoMapper;
+import com.lukeware.cotacao.ICotacaoResponse;
+import com.lukeware.cotacao.dto.CotacaoDataAccessRequest;
+import com.lukeware.cotacao.dto.CotacaoRequest;
 import com.lukeware.entities.CotacaoBuilder;
 
 import java.util.Optional;

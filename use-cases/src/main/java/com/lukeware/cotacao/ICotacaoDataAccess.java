@@ -1,5 +1,7 @@
 package com.lukeware.cotacao;
 
+import com.lukeware.cotacao.dto.CotacaoDataAccessRequest;
+
 import java.util.Optional;
 
 /**

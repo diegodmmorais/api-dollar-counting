@@ -1,4 +1,4 @@
-package com.lukeware.cotacao;
+package com.lukeware.cotacao.dto;
 
 /**
  * @author Diego Morais
