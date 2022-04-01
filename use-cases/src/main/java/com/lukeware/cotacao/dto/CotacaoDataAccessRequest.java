@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 /**
  * @author Diego Morais
  */
-public class CotacaoDataAccessRequest {
+public final class CotacaoDataAccessRequest {
 
   private Double cotacaoCompra;
   private Double cotacaoVenda;

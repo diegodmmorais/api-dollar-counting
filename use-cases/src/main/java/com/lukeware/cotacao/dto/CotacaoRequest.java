@@ -3,7 +3,7 @@ package com.lukeware.cotacao.dto;
 /**
  * @author Diego Morais
  */
-public class CotacaoRequest {
+public final class CotacaoRequest {
   String dataInicial;
   String dataFinal;
 

@@ -15,7 +15,7 @@ import java.util.Optional;
 /**
  * @author Diego Morais
  */
-class CotacaoInteractor implements ICotacaoIteractorCreate {
+final class CotacaoInteractor implements ICotacaoIteractorCreate {
 
   private final ICotacaoDataAccess cotacaoDataAccess;
   private final ICotacaoAdapter cotacaoAdapter;
