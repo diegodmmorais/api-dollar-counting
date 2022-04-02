@@ -1,7 +1,5 @@
 package com.lukeware.cotacao.dto;
 
-import com.lukeware.entities.CotacaoBuilder;
-
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;

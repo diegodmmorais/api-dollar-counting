@@ -1,0 +1,6 @@
+/Users/diegomorais/workspace/testes-tecnico/api-dollar-counting/interface-adapter/src/main/java/com/lukeware/gateway/implementacao/pesquisador/CotacaoPesquisadorDataAccessFactory.java
+/Users/diegomorais/workspace/testes-tecnico/api-dollar-counting/interface-adapter/src/main/java/com/lukeware/gateway/implementacao/registrador/CotacaoRegistradorDataAccess.java
+/Users/diegomorais/workspace/testes-tecnico/api-dollar-counting/interface-adapter/src/main/java/com/lukeware/gateway/ICotacaoRegistradorRepository.java
+/Users/diegomorais/workspace/testes-tecnico/api-dollar-counting/interface-adapter/src/main/java/com/lukeware/gateway/implementacao/registrador/CotacaoRegistradorFactory.java
+/Users/diegomorais/workspace/testes-tecnico/api-dollar-counting/interface-adapter/src/main/java/com/lukeware/gateway/ICotacaoPesquisadorRepository.java
+/Users/diegomorais/workspace/testes-tecnico/api-dollar-counting/interface-adapter/src/main/java/com/lukeware/gateway/implementacao/pesquisador/CotacaoPesquisadorDataAccess.java

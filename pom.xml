@@ -43,7 +43,7 @@
   <modules>
     <module>entities</module>
     <module>use-cases</module>
-    <module>gateway-database</module>
+    <module>interface-adapter</module>
     <module>framework-spring</module>
   </modules>
 

@@ -1,8 +1,8 @@
 package com.lukeware.cotacao.implementacao.registrador;
 
+import com.lukeware.cotacao.dto.CotacaoRequest;
 import com.lukeware.cotacao.ICotacaoRegistradorDataAccess;
 import com.lukeware.cotacao.dto.CotacaoDataAccessRequest;
-import com.lukeware.cotacao.dto.CotacaoRequest;
 import com.lukeware.cotacao.ICotacaoRegistrador;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

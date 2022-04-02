@@ -1,10 +1,10 @@
 package com.lukeware.cotacao.implementacao.migrador;
 
+import com.lukeware.cotacao.ICotacaoMigrador;
+import com.lukeware.cotacao.dto.CotacaoRequest;
 import com.lukeware.cotacao.ICotacaoAdapter;
 import com.lukeware.cotacao.ICotacaoRegistradorDataAccess;
-import com.lukeware.cotacao.ICotacaoMigrador;
 import com.lukeware.cotacao.ICotacaoRegistrador;
-import com.lukeware.cotacao.dto.CotacaoRequest;
 import com.lukeware.cotacao.dto.CotacaoResponse;
 import com.lukeware.cotacao.ICotacaoPesquisadorDataAccess;
 

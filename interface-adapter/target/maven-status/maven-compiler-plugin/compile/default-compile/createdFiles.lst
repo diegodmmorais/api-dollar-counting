@@ -1,0 +1,6 @@
+com/lukeware/gateway/implementacao/registrador/CotacaoRegistradorFactory.class
+com/lukeware/gateway/implementacao/registrador/CotacaoRegistradorDataAccess.class
+com/lukeware/gateway/implementacao/pesquisador/CotacaoPesquisadorDataAccessFactory.class
+com/lukeware/gateway/ICotacaoRegistradorRepository.class
+com/lukeware/gateway/ICotacaoPesquisadorRepository.class
+com/lukeware/gateway/implementacao/pesquisador/CotacaoPesquisadorDataAccess.class
