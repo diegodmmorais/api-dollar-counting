@@ -1,7 +1,8 @@
 package com.lukeware.cotacao.controller.implementacao;
 
 import com.lukeware.cotacao.ICotacaoMigrador;
-import com.lukeware.cotacao.controller.ICotacaoMigradorController;
+import com.lukeware.cotacao.controller.IMigradorCotacaoController;
+import com.lukeware.cotacao.controller.implementacao.migrador.MigradorCotacaoControllerFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -13,17 +14,17 @@ import org.mockito.MockitoAnnotations;
  * @author Diego Morais
  */
 @DisplayName("Testando o controlador de contações")
-class CotacaoMigradorControllerTest {
+class MigradorCotacaoControllerTest {
 
   @Mock
   ICotacaoMigrador cotacaoMigrador;
 
-  private ICotacaoMigradorController cotacaoMigradorController;
+  private IMigradorCotacaoController cotacaoMigradorController;
 
   @BeforeEach
   void setUp() {
     MockitoAnnotations.openMocks(this);
-    cotacaoMigradorController = CotacaoMigradorControllerFactory.instance().create(cotacaoMigrador);
+    cotacaoMigradorController = MigradorCotacaoControllerFactory.instance().create(cotacaoMigrador);
   }
 
   @Test
