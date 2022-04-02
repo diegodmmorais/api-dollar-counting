@@ -28,7 +28,7 @@ public final class MigradorCotacaoControllerFactory {
     return migradorCotacaoControllerFactory;
   }
 
-  public IMigradorCotacaoController create(IMigradorCotacaoInteractor cotacaoMigrador) {
-    return new MigradorCotacaoController(cotacaoMigrador);
+  public IMigradorCotacaoController create(IMigradorCotacaoInteractor migradorCotacaoInteractor) {
+    return new MigradorCotacaoController(migradorCotacaoInteractor);
   }
 }

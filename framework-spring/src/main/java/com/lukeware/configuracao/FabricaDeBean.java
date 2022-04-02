@@ -8,7 +8,9 @@ import com.lukeware.cotacao.IRegistradorCotacao;
 import com.lukeware.cotacao.IRegistradorCotacaoDataAccess;
 import com.lukeware.cotacao.api.IPesquisadorCotacaoApi;
 import com.lukeware.cotacao.api.implementacao.CotacaoApiAdapterFactory;
+import com.lukeware.cotacao.controller.IMigradorCotacaoController;
 import com.lukeware.cotacao.controller.IPesquisadorCotacaoController;
+import com.lukeware.cotacao.controller.implementacao.migrador.MigradorCotacaoControllerFactory;
 import com.lukeware.cotacao.controller.implementacao.pesquisador.PesquisadorCotacaoControllerFactory;
 import com.lukeware.cotacao.implementacao.migrador.MigradorCotacaoFactory;
 import com.lukeware.cotacao.implementacao.pesquisador.PesquisadorCotacaoFactory;
@@ -76,6 +78,11 @@ final class FabricaDeBean {
                                          cotacaoApiAdapter,
                                          registradorCotacao,
                                          pesquisadorCotacaoDataAccess);
+  }
+
+  @Bean
+  public IMigradorCotacaoController migradorCotacaoController(IMigradorCotacaoInteractor migradorCotacaoInteractor) {
+    return MigradorCotacaoControllerFactory.instance().create(migradorCotacaoInteractor);
   }
 
 }
