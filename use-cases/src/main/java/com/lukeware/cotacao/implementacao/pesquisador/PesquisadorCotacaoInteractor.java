@@ -1,4 +1,4 @@
-package com.lukeware.cotacao.repository.implementacao.pesquisador;
+package com.lukeware.cotacao.implementacao.pesquisador;
 
 import com.lukeware.cotacao.ICotacaoPesquisadorDataAccess;
 import com.lukeware.cotacao.IPesquisadorCotacao;

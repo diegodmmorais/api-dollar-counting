@@ -1,8 +1,9 @@
-package com.lukeware.cotacao.repository.implementacao.pesquisador;
+package com.lukeware.cotacao.implementacao.pesquisador;
 
 import com.lukeware.cotacao.dto.CotacaoDataAccessResponse;
 import com.lukeware.cotacao.ICotacaoPesquisadorDataAccess;
 import com.lukeware.cotacao.repository.ICotacaoPesquisadorRepository;
+import com.lukeware.cotacao.repository.implementacao.pesquisador.CotacaoPesquisadorDataAccessFactory;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

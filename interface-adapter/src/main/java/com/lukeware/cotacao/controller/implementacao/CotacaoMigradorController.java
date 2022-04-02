@@ -10,7 +10,7 @@ final class CotacaoMigradorController implements ICotacaoMigradorController {
 
   private final ICotacaoMigrador cotacaoMigrador;
 
-  public CotacaoMigradorController(ICotacaoMigrador cotacaoMigrador) {
+  CotacaoMigradorController(ICotacaoMigrador cotacaoMigrador) {
     this.cotacaoMigrador = cotacaoMigrador;
   }
 

@@ -1,4 +1,4 @@
-package com.lukeware.cotacao.repository.implementacao.migrador;
+package com.lukeware.cotacao.implementacao.migrador;
 
 import com.lukeware.cotacao.ICotacaoAdapter;
 import com.lukeware.cotacao.ICotacaoPesquisadorDataAccess;

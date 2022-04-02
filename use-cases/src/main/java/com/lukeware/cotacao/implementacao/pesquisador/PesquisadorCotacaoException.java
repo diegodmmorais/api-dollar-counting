@@ -1,4 +1,4 @@
-package com.lukeware.cotacao.repository.implementacao.pesquisador;
+package com.lukeware.cotacao.implementacao.pesquisador;
 
 /**
  * @author Diego Morais

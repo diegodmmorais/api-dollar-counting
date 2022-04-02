@@ -1,4 +1,4 @@
-package com.lukeware.cotacao.repository.implementacao.registrador;
+package com.lukeware.cotacao.implementacao.registrador;
 
 import com.lukeware.cotacao.dto.CotacaoRequest;
 import com.lukeware.cotacao.ICotacaoRegistradorDataAccess;

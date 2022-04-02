@@ -1,8 +1,9 @@
-package com.lukeware.cotacao.repository.implementacao.registrador;
+package com.lukeware.cotacao.implementacao.registrador;
 
 import com.lukeware.cotacao.ICotacaoRegistradorDataAccess;
 import com.lukeware.cotacao.repository.ICotacaoRegistradorRepository;
 import com.lukeware.cotacao.dto.CotacaoDataAccessRequest;
+import com.lukeware.cotacao.repository.implementacao.registrador.CotacaoRegistradorFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
