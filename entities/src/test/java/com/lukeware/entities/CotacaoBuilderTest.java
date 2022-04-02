@@ -15,7 +15,7 @@ class CotacaoBuilderTest {
 
   @Test
   @DisplayName("1 - Construindo um objeto de cotação")
-  void construindo_um_objeto_de_contacao() {
+  void construindo_um_objeto_de_cotacao() {
     final var cotacao = CotacaoBuilder.builder()
                                       .cotacaoCompra(4.73720)
                                       .cotacaoVenda(4.73780)
