@@ -1,6 +1,6 @@
 package com.lukeware.cotacao.controller.implementacao;
 
-import com.lukeware.cotacao.IMigradorCotacao;
+import com.lukeware.cotacao.IMigradorCotacaoInteractor;
 import com.lukeware.cotacao.controller.IMigradorCotacaoController;
 import com.lukeware.cotacao.controller.implementacao.migrador.MigradorCotacaoControllerFactory;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,7 +17,7 @@ import org.mockito.MockitoAnnotations;
 class MigradorCotacaoControllerTest {
 
   @Mock
-  IMigradorCotacao cotacaoMigrador;
+  IMigradorCotacaoInteractor cotacaoMigrador;
 
   private IMigradorCotacaoController cotacaoMigradorController;
 

@@ -1,25 +1,25 @@
 package com.lukeware.cotacao.implementacao.migrador;
 
-import com.lukeware.cotacao.IMigradorCotacao;
-import com.lukeware.cotacao.dto.CotacaoRequest;
-import com.lukeware.cotacao.IAdapterCotacao;
-import com.lukeware.cotacao.IRegistradorCotacaoDataAccess;
-import com.lukeware.cotacao.IRegistradorCotacao;
-import com.lukeware.cotacao.dto.CotacaoResponse;
+import com.lukeware.cotacao.ICotacaoApiAdapter;
+import com.lukeware.cotacao.IMigradorCotacaoInteractor;
 import com.lukeware.cotacao.IPesquisadorCotacaoDataAccess;
+import com.lukeware.cotacao.IRegistradorCotacao;
+import com.lukeware.cotacao.IRegistradorCotacaoDataAccess;
+import com.lukeware.cotacao.dto.CotacaoApiResponse;
+import com.lukeware.cotacao.dto.CotacaoRequest;
 
 /**
  * @author Diego Morais
  */
-final class MigradorInteractorCotacao implements IMigradorCotacao {
+final class MigradorCotacaoInteractor implements IMigradorCotacaoInteractor {
 
   private final IRegistradorCotacaoDataAccess dataAccessRegistrador;
   private final IPesquisadorCotacaoDataAccess dataAccessPesquisador;
-  private final IAdapterCotacao cotacaoAdapter;
+  private final ICotacaoApiAdapter cotacaoAdapter;
   private final IRegistradorCotacao cotacaoRegistrador;
 
-  public MigradorInteractorCotacao(IRegistradorCotacaoDataAccess dataAccessRegistrador,
-                                   IAdapterCotacao cotacaoAdapter,
+  public MigradorCotacaoInteractor(IRegistradorCotacaoDataAccess dataAccessRegistrador,
+                                   ICotacaoApiAdapter cotacaoAdapter,
                                    IRegistradorCotacao cotacaoRegistrador,
                                    IPesquisadorCotacaoDataAccess dataAccessPesquisador) {
     this.dataAccessRegistrador = dataAccessRegistrador;
@@ -39,9 +39,9 @@ final class MigradorInteractorCotacao implements IMigradorCotacao {
     this.cotacaoAdapter.buscar(dataCotacao).ifPresent(this::registrar);
   }
 
-  private void registrar(CotacaoResponse cotacaoResponse) {
+  private void registrar(CotacaoApiResponse cotacaoResponse) {
     this.cotacaoRegistrador.registrar(new CotacaoRequest(cotacaoResponse.getCotacaoCompra(),
                                                          cotacaoResponse.getCotacaoVenda(),
-                                                         cotacaoResponse.getDataHoraCotacaoString()));
+                                                         cotacaoResponse.getDataHoraCotacao()));
   }
 }

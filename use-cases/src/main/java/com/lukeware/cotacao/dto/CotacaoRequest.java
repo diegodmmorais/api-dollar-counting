@@ -1,14 +1,16 @@
 package com.lukeware.cotacao.dto;
 
+import java.time.LocalDateTime;
+
 /**
  * @author Diego Morais
  */
 public final class CotacaoRequest {
   private final Double cotacaoCompra;
   private final Double cotacaoVenda;
-  private final String dataHoraCotacao;
+  private final LocalDateTime dataHoraCotacao;
 
-  public CotacaoRequest(Double cotacaoCompra, Double cotacaoVenda, String dataHoraCotacao) {
+  public CotacaoRequest(Double cotacaoCompra, Double cotacaoVenda, LocalDateTime dataHoraCotacao) {
     this.cotacaoCompra = cotacaoCompra;
     this.cotacaoVenda = cotacaoVenda;
     this.dataHoraCotacao = dataHoraCotacao;
@@ -22,7 +24,7 @@ public final class CotacaoRequest {
     return this.cotacaoVenda;
   }
 
-  public String getDataHoraCotacao() {
+  public LocalDateTime getDataHoraCotacao() {
     return this.dataHoraCotacao;
   }
 }

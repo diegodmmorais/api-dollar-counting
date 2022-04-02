@@ -3,4 +3,17 @@ spring:
     mongodb:
       user: admin
       password: admin123
-      uri: mongodb://host:27017/db
+      uri: mongodb://127.0.0.1:27017/db
+
+
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
+  cotacaoProxy:
+    name: IPesquisadorCotacaoProxy
+    url: https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/

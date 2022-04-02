@@ -1,4 +1,4 @@
-package com.lukeware.cotacao.api;
+package com.lukeware.cotacao;
 
 import com.lukeware.cotacao.dto.CotacaoApiResponse;
 
@@ -7,6 +7,6 @@ import java.util.Optional;
 /**
  * @author Diego Morais
  */
-public interface IPesquisadorCotacaoApi {
+public interface ICotacaoApiAdapter {
   Optional<CotacaoApiResponse> buscar(String dataCotacao);
 }

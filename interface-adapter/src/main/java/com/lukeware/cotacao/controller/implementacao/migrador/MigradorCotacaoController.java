@@ -1,6 +1,6 @@
 package com.lukeware.cotacao.controller.implementacao.migrador;
 
-import com.lukeware.cotacao.IMigradorCotacao;
+import com.lukeware.cotacao.IMigradorCotacaoInteractor;
 import com.lukeware.cotacao.controller.IMigradorCotacaoController;
 
 /**
@@ -8,9 +8,9 @@ import com.lukeware.cotacao.controller.IMigradorCotacaoController;
  */
 final class MigradorCotacaoController implements IMigradorCotacaoController {
 
-  private final IMigradorCotacao cotacaoMigrador;
+  private final IMigradorCotacaoInteractor cotacaoMigrador;
 
-  MigradorCotacaoController(IMigradorCotacao cotacaoMigrador) {
+  MigradorCotacaoController(IMigradorCotacaoInteractor cotacaoMigrador) {
     this.cotacaoMigrador = cotacaoMigrador;
   }
 

@@ -3,6 +3,6 @@ package com.lukeware.cotacao;
 /**
  * @author Diego Morais
  */
-public interface IMigradorCotacao {
+public interface IMigradorCotacaoInteractor {
   void migrar(String dataCotacao);
 }

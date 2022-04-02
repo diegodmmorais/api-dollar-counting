@@ -1,9 +1,9 @@
 package com.lukeware.cotacao.implementacao.registrador;
 
-import com.lukeware.cotacao.dto.CotacaoRequest;
+import com.lukeware.cotacao.IRegistradorCotacao;
 import com.lukeware.cotacao.IRegistradorCotacaoDataAccess;
 import com.lukeware.cotacao.dto.CotacaoDataAccessRequest;
-import com.lukeware.cotacao.IRegistradorCotacao;
+import com.lukeware.cotacao.dto.CotacaoRequest;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -15,6 +15,7 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  * @author Diego Morais
@@ -39,7 +40,7 @@ class RegistradorCotacaoInteractorTest {
   @Test
   @DisplayName("1 - Registrando uma cotação encontrando que não está registrada no banco")
   void registrar() {
-    final var cotacaoRequest = new CotacaoRequest(4.85, 4.95, "2022-03-31 14:36:26.861");
+    final var cotacaoRequest = new CotacaoRequest(4.85, 4.95, LocalDateTime.of(2022, 4, 12, 0, 0));
 
     this.cotacaoRegistrador.registrar(cotacaoRequest);
 
@@ -51,10 +52,10 @@ class RegistradorCotacaoInteractorTest {
     Assertions.assertThat(dataAccessRequest.getCotacaoVenda()).isNotNull().isEqualTo(4.95);
     Assertions.assertThat(dataAccessRequest.getDataCotacao())
               .isNotNull()
-              .isEqualTo(LocalDate.of(2022, 03, 31));
+              .isEqualTo(LocalDate.of(2022, 4, 12));
     Assertions.assertThat(dataAccessRequest.getDataHoraCotacao().toLocalDate())
               .isNotNull()
-              .isEqualTo(LocalDate.of(2022, 03, 31));
+              .isEqualTo(LocalDate.of(2022, 4, 12));
     Assertions.assertThat(dataAccessRequest.getTempoDaRequisicao().toLocalDate())
               .isNotNull()
               .isEqualTo(LocalDate.now());

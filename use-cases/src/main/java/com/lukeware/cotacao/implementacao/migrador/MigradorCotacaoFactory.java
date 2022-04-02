@@ -1,9 +1,9 @@
 package com.lukeware.cotacao.implementacao.migrador;
 
-import com.lukeware.cotacao.IAdapterCotacao;
+import com.lukeware.cotacao.ICotacaoApiAdapter;
 import com.lukeware.cotacao.IPesquisadorCotacaoDataAccess;
 import com.lukeware.cotacao.IRegistradorCotacaoDataAccess;
-import com.lukeware.cotacao.IMigradorCotacao;
+import com.lukeware.cotacao.IMigradorCotacaoInteractor;
 import com.lukeware.cotacao.IRegistradorCotacao;
 
 import java.util.Objects;
@@ -29,10 +29,10 @@ public final class MigradorCotacaoFactory {
     return migradorCotacaoFactory;
   }
 
-  public IMigradorCotacao create(IRegistradorCotacaoDataAccess cotacaoDataAccess,
-                                 IAdapterCotacao cotacaoAdapter,
-                                 IRegistradorCotacao cotacaoRegistrador,
-                                 IPesquisadorCotacaoDataAccess dataAccessPesquisador) {
-    return new MigradorInteractorCotacao(cotacaoDataAccess, cotacaoAdapter, cotacaoRegistrador, dataAccessPesquisador);
+  public IMigradorCotacaoInteractor create(IRegistradorCotacaoDataAccess cotacaoDataAccess,
+                                           ICotacaoApiAdapter cotacaoAdapter,
+                                           IRegistradorCotacao cotacaoRegistrador,
+                                           IPesquisadorCotacaoDataAccess dataAccessPesquisador) {
+    return new MigradorCotacaoInteractor(cotacaoDataAccess, cotacaoAdapter, cotacaoRegistrador, dataAccessPesquisador);
   }
 }
