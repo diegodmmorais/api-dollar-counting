@@ -13,17 +13,17 @@ import java.util.List;
  * @author Diego Morais
  */
 @RestController
-@RequestMapping("cotacoes")
-class PesquisadorCotacaoResource {
+@RequestMapping("/cotacoes")
+public class PesquisadorCotacaoResource {
 
   private final IPesquisadorCotacaoController pesquisadorCotacaoController;
 
-  PesquisadorCotacaoResource(IPesquisadorCotacaoController pesquisadorCotacaoController) {
+  public PesquisadorCotacaoResource(IPesquisadorCotacaoController pesquisadorCotacaoController) {
     this.pesquisadorCotacaoController = pesquisadorCotacaoController;
   }
 
   @GetMapping("/pesquisar")
-  List<CotacaoResponse> pesquisar(@RequestParam String dataInicial, @RequestParam String dataFinal) {
+  public List<CotacaoResponse> pesquisar(@RequestParam String dataInicial, @RequestParam String dataFinal) {
     return pesquisadorCotacaoController.pesquisar(dataInicial, dataFinal);
   }
 }

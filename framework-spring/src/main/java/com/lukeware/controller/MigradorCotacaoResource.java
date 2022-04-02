@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Diego Morais
  */
 @RestController
-@RequestMapping("cotacoes")
+@RequestMapping("/cotacoes")
 public class MigradorCotacaoResource {
 
   private final IMigradorCotacaoController migradorCotacaoController;
@@ -19,8 +19,8 @@ public class MigradorCotacaoResource {
     this.migradorCotacaoController = migradorCotacaoController;
   }
 
-  @GetMapping("migrar")
-  void migrar(@RequestParam String dataCotacao) {
+  @GetMapping("/migrar")
+  public void migrar(@RequestParam String dataCotacao) {
     migradorCotacaoController.migrar(dataCotacao);
   }
 }
