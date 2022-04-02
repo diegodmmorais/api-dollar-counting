@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter;
  */
 public final class CotacaoBuilder {
 
-  private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+  private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
 
   private Double cotacaoCompra;
   private Double cotacaoVenda;
@@ -34,7 +34,7 @@ public final class CotacaoBuilder {
   }
 
   public CotacaoBuilder dataHoraCotacao(String dataHoraCotacao) {
-    this.dataHoraCotacao = LocalDateTime.parse(dataHoraCotacao, formatter);
+    this.dataHoraCotacao = LocalDateTime.parse(dataHoraCotacao, FORMATTER);
     return this;
   }
 

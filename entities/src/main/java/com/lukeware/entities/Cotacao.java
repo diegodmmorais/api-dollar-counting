@@ -34,15 +34,15 @@ final class Cotacao implements ICotacao {
   }
 
   @Override
+  public LocalDate getDataCotacao() {
+    return this.dataHoraCotacao.toLocalDate();
+  }
+
+  @Override
   public void validarInformacoes() {
     Objects.requireNonNull(this.cotacaoCompra, "Cotação de compra é obrigatório");
     Objects.requireNonNull(this.cotacaoVenda, "Cotação de venda é obrigatório");
     Objects.requireNonNull(this.dataHoraCotacao, "Data da cotação é obrigatório");
-  }
-
-  @Override
-  public LocalDate getDataCotacao() {
-    return this.dataHoraCotacao.toLocalDate();
   }
 
   @Override

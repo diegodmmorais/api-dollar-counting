@@ -13,7 +13,7 @@ public interface ICotacao {
 
   LocalDateTime getDataHoraCotacao();
 
-  void validarInformacoes();
-
   LocalDate getDataCotacao();
+
+  void validarInformacoes();
 }

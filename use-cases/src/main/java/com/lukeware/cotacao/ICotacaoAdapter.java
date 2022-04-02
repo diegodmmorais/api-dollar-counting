@@ -1,12 +1,12 @@
 package com.lukeware.cotacao;
 
-import com.lukeware.cotacao.dto.CotacaoRequest;
+import com.lukeware.cotacao.dto.CotacaoResponse;
 
-import java.util.Set;
+import java.util.Optional;
 
 /**
  * @author Diego Morais
  */
 public interface ICotacaoAdapter {
-  Set<ICotacaoResponse> buscar(CotacaoRequest cotacaoRequest);
+  Optional<CotacaoResponse> buscar(String dataCotacao);
 }

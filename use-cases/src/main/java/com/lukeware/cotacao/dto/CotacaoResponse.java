@@ -1,15 +1,16 @@
 package com.lukeware.cotacao.dto;
 
-import com.lukeware.entities.CotacaoBuilder;
-
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Objects;
+import java.time.format.DateTimeFormatter;
 
 /**
  * @author Diego Morais
  */
-public final class CotacaoDataAccessRequest {
+public class CotacaoResponse {
+
+  private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+
 
   private Double cotacaoCompra;
   private Double cotacaoVenda;
@@ -17,13 +18,7 @@ public final class CotacaoDataAccessRequest {
   private LocalDate dataCotacao;
   private LocalDateTime tempoDaRequisicao;
 
-  public CotacaoDataAccessRequest(
-      Double cotacaoCompra,
-      Double cotacaoVenda,
-      LocalDateTime dataHoraCotacao,
-      LocalDate dataCotacao,
-      LocalDateTime tempoDaRequisicao
-  ) {
+  public CotacaoResponse(Double cotacaoCompra, Double cotacaoVenda, LocalDateTime dataHoraCotacao, LocalDate dataCotacao, LocalDateTime tempoDaRequisicao) {
     this.cotacaoCompra = cotacaoCompra;
     this.cotacaoVenda = cotacaoVenda;
     this.dataHoraCotacao = dataHoraCotacao;
@@ -43,6 +38,10 @@ public final class CotacaoDataAccessRequest {
     return dataHoraCotacao;
   }
 
+  public String getDataHoraCotacaoString() {
+    return dataHoraCotacao.format(FORMATTER);
+  }
+
   public LocalDate getDataCotacao() {
     return dataCotacao;
   }
@@ -51,39 +50,12 @@ public final class CotacaoDataAccessRequest {
     return tempoDaRequisicao;
   }
 
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    CotacaoDataAccessRequest that = (CotacaoDataAccessRequest) o;
-    return Objects.equals(cotacaoCompra, that.cotacaoCompra) && Objects.equals(cotacaoVenda, that.cotacaoVenda) && Objects.equals(dataCotacao, that.dataCotacao);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(cotacaoCompra, cotacaoVenda, dataCotacao);
-  }
-
-  @Override
-  public String toString() {
-    return "CotacaoDataAccessRequest{" +
-        "cotacaoCompra=" + cotacaoCompra +
-        ", cotacaoVenda=" + cotacaoVenda +
-        ", dataHoraCotacao=" + dataHoraCotacao +
-        '}';
-  }
-
   public static final class Builder {
-
     private Double cotacaoCompra;
     private Double cotacaoVenda;
     private LocalDateTime dataHoraCotacao;
     private LocalDate dataCotacao;
     private LocalDateTime tempoDaRequisicao;
-
-    private Builder() {
-      super();
-    }
 
     public static Builder builder() {
       return new Builder();
@@ -114,12 +86,8 @@ public final class CotacaoDataAccessRequest {
       return this;
     }
 
-    public CotacaoDataAccessRequest build() {
-      return new CotacaoDataAccessRequest(this.cotacaoCompra, this.cotacaoVenda, this.dataHoraCotacao, this.dataCotacao, this.tempoDaRequisicao);
-    }
-
-    public CotacaoBuilder dataCotacaoFinal(String dataFinal) {
-      return null;
+    public CotacaoResponse build() {
+      return new CotacaoResponse(this.cotacaoCompra, this.cotacaoVenda, this.dataHoraCotacao, this.dataCotacao, this.tempoDaRequisicao);
     }
   }
 }
