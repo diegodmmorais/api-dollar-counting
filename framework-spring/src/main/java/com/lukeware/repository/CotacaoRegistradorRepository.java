@@ -1,6 +1,6 @@
 package com.lukeware.repository;
 
-import com.lukeware.cotacao.ICotacaoRegistradorRepository;
+import com.lukeware.cotacao.repository.ICotacaoRegistradorRepository;
 import com.lukeware.cotacao.dto.CotacaoDataAccessRequest;
 import org.springframework.stereotype.Component;
 

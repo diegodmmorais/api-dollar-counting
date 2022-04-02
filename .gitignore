@@ -25,3 +25,4 @@ hs_err_pid*
 /.idea/
 /entities/target/
 /use-cases/target/
+/mongo_data/

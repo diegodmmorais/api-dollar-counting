@@ -3,4 +3,4 @@ spring:
     mongodb:
       user: admin
       password: admin123
-      uri: mongodb://host:27017/db
+      uri: mongodb://127.0.0.1:27017/db
