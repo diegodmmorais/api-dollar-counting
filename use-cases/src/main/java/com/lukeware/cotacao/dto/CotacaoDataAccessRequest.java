@@ -118,8 +118,5 @@ public final class CotacaoDataAccessRequest {
       return new CotacaoDataAccessRequest(this.cotacaoCompra, this.cotacaoVenda, this.dataHoraCotacao, this.dataCotacao, this.tempoDaRequisicao);
     }
 
-    public CotacaoBuilder dataCotacaoFinal(String dataFinal) {
-      return null;
-    }
   }
 }
