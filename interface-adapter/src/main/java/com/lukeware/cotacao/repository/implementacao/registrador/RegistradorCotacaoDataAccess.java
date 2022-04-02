@@ -1,17 +1,17 @@
 package com.lukeware.cotacao.repository.implementacao.registrador;
 
-import com.lukeware.cotacao.ICotacaoRegistradorDataAccess;
-import com.lukeware.cotacao.repository.ICotacaoRegistradorRepository;
+import com.lukeware.cotacao.IRegistradorCotacaoDataAccess;
+import com.lukeware.cotacao.repository.IRegistradorCotacaoRepository;
 import com.lukeware.cotacao.dto.CotacaoDataAccessRequest;
 
 /**
  * @author Diego Morais
  */
-final class CotacaoRegistradorDataAccess implements ICotacaoRegistradorDataAccess {
+final class RegistradorCotacaoDataAccess implements IRegistradorCotacaoDataAccess {
 
-  private final ICotacaoRegistradorRepository cotacaoRegistradorRepository;
+  private final IRegistradorCotacaoRepository cotacaoRegistradorRepository;
 
-  public CotacaoRegistradorDataAccess(ICotacaoRegistradorRepository cotacaoRegistradorRepository) {
+  public RegistradorCotacaoDataAccess(IRegistradorCotacaoRepository cotacaoRegistradorRepository) {
     this.cotacaoRegistradorRepository = cotacaoRegistradorRepository;
   }
 

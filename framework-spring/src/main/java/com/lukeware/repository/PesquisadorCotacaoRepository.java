@@ -1,7 +1,8 @@
 package com.lukeware.repository;
 
-import com.lukeware.cotacao.ICotacaoPesquisadorDataAccess;
+import com.lukeware.cotacao.IPesquisadorCotacaoDataAccess;
 import com.lukeware.cotacao.dto.CotacaoDataAccessResponse;
+import com.lukeware.cotacao.repository.ICotacaoPesquisadorRepository;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
@@ -14,12 +15,12 @@ import java.util.stream.Collectors;
  * @author Diego Morais
  */
 @Component
-public class CotacaoPesquisadorRepository implements ICotacaoPesquisadorDataAccess {
+public class PesquisadorCotacaoRepository implements ICotacaoPesquisadorRepository {
 
   private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-  private ICotacaoRepository cotacaoRepository;
+  private IRepositoryCotacao cotacaoRepository;
 
-  public CotacaoPesquisadorRepository(ICotacaoRepository cotacaoRepository) {
+  public PesquisadorCotacaoRepository(IRepositoryCotacao cotacaoRepository) {
     this.cotacaoRepository = cotacaoRepository;
   }
 

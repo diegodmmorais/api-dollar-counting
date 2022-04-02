@@ -1,11 +1,11 @@
 package com.lukeware.cotacao.implementacao.migrador;
 
-import com.lukeware.cotacao.ICotacaoMigrador;
+import com.lukeware.cotacao.IMigradorCotacao;
 import com.lukeware.cotacao.dto.CotacaoRequest;
-import com.lukeware.cotacao.ICotacaoAdapter;
-import com.lukeware.cotacao.ICotacaoPesquisadorDataAccess;
-import com.lukeware.cotacao.ICotacaoRegistradorDataAccess;
-import com.lukeware.cotacao.ICotacaoRegistrador;
+import com.lukeware.cotacao.IAdapterCotacao;
+import com.lukeware.cotacao.IPesquisadorCotacaoDataAccess;
+import com.lukeware.cotacao.IRegistradorCotacaoDataAccess;
+import com.lukeware.cotacao.IRegistradorCotacao;
 import com.lukeware.cotacao.dto.CotacaoResponse;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -28,21 +28,21 @@ import java.util.Optional;
 class MigradorCotacaoInteractorTest {
 
   @Mock
-  ICotacaoAdapter cotacaoAdapter;
+  IAdapterCotacao cotacaoAdapter;
 
   @Mock
-  ICotacaoRegistradorDataAccess cotacaoDataAccess;
+  IRegistradorCotacaoDataAccess cotacaoDataAccess;
 
   @Mock
-  ICotacaoRegistrador cotacaoRegistrador;
+  IRegistradorCotacao cotacaoRegistrador;
 
   @Mock
-  ICotacaoPesquisadorDataAccess dataAccessPesquisador;
+  IPesquisadorCotacaoDataAccess dataAccessPesquisador;
 
   @Captor
   ArgumentCaptor<CotacaoRequest> cotacaoRequest;
 
-  ICotacaoMigrador cotacaoMigrador;
+  IMigradorCotacao cotacaoMigrador;
 
   @BeforeEach
   void setUp() {

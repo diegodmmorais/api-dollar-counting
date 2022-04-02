@@ -1,6 +1,6 @@
 package com.lukeware.cotacao.controller.implementacao.migrador;
 
-import com.lukeware.cotacao.ICotacaoMigrador;
+import com.lukeware.cotacao.IMigradorCotacao;
 import com.lukeware.cotacao.controller.IMigradorCotacaoController;
 
 import java.util.Objects;
@@ -28,7 +28,7 @@ public final class MigradorCotacaoControllerFactory {
     return migradorCotacaoControllerFactory;
   }
 
-  public IMigradorCotacaoController create(ICotacaoMigrador cotacaoMigrador) {
+  public IMigradorCotacaoController create(IMigradorCotacao cotacaoMigrador) {
     return new MigradorCotacaoController(cotacaoMigrador);
   }
 }

@@ -8,7 +8,7 @@ import java.util.Optional;
 /**
  * @author Diego Morais
  */
-public interface ICotacaoPesquisadorDataAccess {
+public interface IPesquisadorCotacaoDataAccess {
   Optional<CotacaoDataAccessResponse> pesquisarPorData(String dataDaCotacao);
 
   List<CotacaoDataAccessResponse> pesquisarPorData(String dataIncial, String dataFinal);

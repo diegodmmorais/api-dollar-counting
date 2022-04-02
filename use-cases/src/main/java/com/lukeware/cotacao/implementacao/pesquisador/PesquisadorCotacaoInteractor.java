@@ -1,6 +1,6 @@
 package com.lukeware.cotacao.implementacao.pesquisador;
 
-import com.lukeware.cotacao.ICotacaoPesquisadorDataAccess;
+import com.lukeware.cotacao.IPesquisadorCotacaoDataAccess;
 import com.lukeware.cotacao.IPesquisadorCotacao;
 import com.lukeware.cotacao.dto.CotacaoDataAccessResponse;
 import com.lukeware.cotacao.dto.CotacaoResponse;
@@ -13,10 +13,10 @@ import java.util.stream.Collectors;
  * @author Diego morais
  */
 final class PesquisadorCotacaoInteractor implements IPesquisadorCotacao {
-  private final ICotacaoPesquisadorDataAccess dataAccessPesquisador;
+  private final IPesquisadorCotacaoDataAccess dataAccessPesquisador;
   private final IValidadorDeData validadorDeData;
 
-  public PesquisadorCotacaoInteractor(ICotacaoPesquisadorDataAccess dataAccessPesquisador, IValidadorDeData validadorDeData) {
+  public PesquisadorCotacaoInteractor(IPesquisadorCotacaoDataAccess dataAccessPesquisador, IValidadorDeData validadorDeData) {
     this.dataAccessPesquisador = dataAccessPesquisador;
     this.validadorDeData = validadorDeData;
   }

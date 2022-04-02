@@ -5,6 +5,6 @@ import com.lukeware.cotacao.dto.CotacaoRequest;
 /**
  * @author Diego Morais
  */
-public interface ICotacaoRegistrador {
+public interface IRegistradorCotacao {
   void registrar(final CotacaoRequest cotacaoRequest);
 }

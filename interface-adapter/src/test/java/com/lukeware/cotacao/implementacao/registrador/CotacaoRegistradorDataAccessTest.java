@@ -1,9 +1,9 @@
 package com.lukeware.cotacao.implementacao.registrador;
 
-import com.lukeware.cotacao.ICotacaoRegistradorDataAccess;
-import com.lukeware.cotacao.repository.ICotacaoRegistradorRepository;
+import com.lukeware.cotacao.IRegistradorCotacaoDataAccess;
+import com.lukeware.cotacao.repository.IRegistradorCotacaoRepository;
 import com.lukeware.cotacao.dto.CotacaoDataAccessRequest;
-import com.lukeware.cotacao.repository.implementacao.registrador.CotacaoRegistradorFactory;
+import com.lukeware.cotacao.repository.implementacao.registrador.RegistradorCotacaoDataAccessFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -21,14 +21,14 @@ import java.time.LocalDateTime;
 class CotacaoRegistradorDataAccessTest {
 
   @Mock
-  ICotacaoRegistradorRepository cotacaoRegistradorRepository;
+  IRegistradorCotacaoRepository cotacaoRegistradorRepository;
 
-  ICotacaoRegistradorDataAccess cotacaoRegistradorDataAccess;
+  IRegistradorCotacaoDataAccess cotacaoRegistradorDataAccess;
 
   @BeforeEach
   void setUp() {
     MockitoAnnotations.openMocks(this);
-    this.cotacaoRegistradorDataAccess = CotacaoRegistradorFactory.instance().create(cotacaoRegistradorRepository);
+    this.cotacaoRegistradorDataAccess = RegistradorCotacaoDataAccessFactory.instance().create(cotacaoRegistradorRepository);
   }
 
   @Test

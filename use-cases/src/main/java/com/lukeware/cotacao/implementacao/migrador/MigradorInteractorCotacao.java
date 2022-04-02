@@ -1,27 +1,27 @@
 package com.lukeware.cotacao.implementacao.migrador;
 
-import com.lukeware.cotacao.ICotacaoMigrador;
+import com.lukeware.cotacao.IMigradorCotacao;
 import com.lukeware.cotacao.dto.CotacaoRequest;
-import com.lukeware.cotacao.ICotacaoAdapter;
-import com.lukeware.cotacao.ICotacaoRegistradorDataAccess;
-import com.lukeware.cotacao.ICotacaoRegistrador;
+import com.lukeware.cotacao.IAdapterCotacao;
+import com.lukeware.cotacao.IRegistradorCotacaoDataAccess;
+import com.lukeware.cotacao.IRegistradorCotacao;
 import com.lukeware.cotacao.dto.CotacaoResponse;
-import com.lukeware.cotacao.ICotacaoPesquisadorDataAccess;
+import com.lukeware.cotacao.IPesquisadorCotacaoDataAccess;
 
 /**
  * @author Diego Morais
  */
-final class MigradorCotacaoInteractor implements ICotacaoMigrador {
+final class MigradorInteractorCotacao implements IMigradorCotacao {
 
-  private final ICotacaoRegistradorDataAccess dataAccessRegistrador;
-  private final ICotacaoPesquisadorDataAccess dataAccessPesquisador;
-  private final ICotacaoAdapter cotacaoAdapter;
-  private final ICotacaoRegistrador cotacaoRegistrador;
+  private final IRegistradorCotacaoDataAccess dataAccessRegistrador;
+  private final IPesquisadorCotacaoDataAccess dataAccessPesquisador;
+  private final IAdapterCotacao cotacaoAdapter;
+  private final IRegistradorCotacao cotacaoRegistrador;
 
-  public MigradorCotacaoInteractor(ICotacaoRegistradorDataAccess dataAccessRegistrador,
-                                   ICotacaoAdapter cotacaoAdapter,
-                                   ICotacaoRegistrador cotacaoRegistrador,
-                                   ICotacaoPesquisadorDataAccess dataAccessPesquisador) {
+  public MigradorInteractorCotacao(IRegistradorCotacaoDataAccess dataAccessRegistrador,
+                                   IAdapterCotacao cotacaoAdapter,
+                                   IRegistradorCotacao cotacaoRegistrador,
+                                   IPesquisadorCotacaoDataAccess dataAccessPesquisador) {
     this.dataAccessRegistrador = dataAccessRegistrador;
     this.cotacaoAdapter = cotacaoAdapter;
     this.cotacaoRegistrador = cotacaoRegistrador;

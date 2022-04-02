@@ -7,6 +7,6 @@ import java.util.Optional;
 /**
  * @author Diego Morais
  */
-public interface ICotacaoAdapter {
+public interface IAdapterCotacao {
   Optional<CotacaoResponse> buscar(String dataCotacao);
 }

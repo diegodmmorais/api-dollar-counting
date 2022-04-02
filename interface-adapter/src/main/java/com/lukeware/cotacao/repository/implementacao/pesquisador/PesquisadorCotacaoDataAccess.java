@@ -2,7 +2,7 @@ package com.lukeware.cotacao.repository.implementacao.pesquisador;
 
 import com.lukeware.cotacao.repository.ICotacaoPesquisadorRepository;
 import com.lukeware.cotacao.dto.CotacaoDataAccessResponse;
-import com.lukeware.cotacao.ICotacaoPesquisadorDataAccess;
+import com.lukeware.cotacao.IPesquisadorCotacaoDataAccess;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,11 +10,11 @@ import java.util.Optional;
 /**
  * @author Diego Morais
  */
-final class CotacaoPesquisadorDataAccess implements ICotacaoPesquisadorDataAccess {
+final class PesquisadorCotacaoDataAccess implements IPesquisadorCotacaoDataAccess {
 
   private final ICotacaoPesquisadorRepository cotacaoPesquisadorRepository;
 
-  public CotacaoPesquisadorDataAccess(ICotacaoPesquisadorRepository cotacaoPesquisadorRepository) {
+  public PesquisadorCotacaoDataAccess(ICotacaoPesquisadorRepository cotacaoPesquisadorRepository) {
     this.cotacaoPesquisadorRepository = cotacaoPesquisadorRepository;
   }
 

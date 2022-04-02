@@ -22,10 +22,10 @@ import java.time.LocalDateTime;
 class CotacaoRegistradorRepositoryTest {
 
   @Mock
-  ICotacaoRepository cotacaoRepository;
+  IRepositoryCotacao cotacaoRepository;
 
   @InjectMocks
-  CotacaoRegistradorRepository cotacaoRegistradorRepository;
+  RegistradorCotacaoRepository cotacaoRegistradorRepository;
 
   @Captor
   ArgumentCaptor<CotacaoMapper> cotacaoMapper;

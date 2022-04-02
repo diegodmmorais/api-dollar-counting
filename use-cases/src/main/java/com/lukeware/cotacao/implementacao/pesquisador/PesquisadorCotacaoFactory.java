@@ -1,6 +1,6 @@
 package com.lukeware.cotacao.implementacao.pesquisador;
 
-import com.lukeware.cotacao.ICotacaoPesquisadorDataAccess;
+import com.lukeware.cotacao.IPesquisadorCotacaoDataAccess;
 import com.lukeware.cotacao.IPesquisadorCotacao;
 import com.lukeware.utils.ValidadorDeDataFactory;
 
@@ -29,7 +29,7 @@ public final class PesquisadorCotacaoFactory {
     return pesquisadorCotacaoFactory;
   }
 
-  public IPesquisadorCotacao create(final ICotacaoPesquisadorDataAccess dataAccessPesquisador) {
+  public IPesquisadorCotacao create(final IPesquisadorCotacaoDataAccess dataAccessPesquisador) {
     return new PesquisadorCotacaoInteractor(dataAccessPesquisador, ValidadorDeDataFactory.instance()
                                                                                          .create(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
   }

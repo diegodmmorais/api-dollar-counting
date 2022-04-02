@@ -1,9 +1,9 @@
 package com.lukeware.cotacao.implementacao.pesquisador;
 
 import com.lukeware.cotacao.dto.CotacaoDataAccessResponse;
-import com.lukeware.cotacao.ICotacaoPesquisadorDataAccess;
+import com.lukeware.cotacao.IPesquisadorCotacaoDataAccess;
 import com.lukeware.cotacao.repository.ICotacaoPesquisadorRepository;
-import com.lukeware.cotacao.repository.implementacao.pesquisador.CotacaoPesquisadorDataAccessFactory;
+import com.lukeware.cotacao.repository.implementacao.pesquisador.PesquisadorCotacaoDataAccessFactory;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -28,12 +28,12 @@ class CotacaoPesquisadorDataAccessTest {
   @Mock
   ICotacaoPesquisadorRepository cotacaoDataAccessRepository;
 
-  ICotacaoPesquisadorDataAccess cotacaoDataAccessPesquisador;
+  IPesquisadorCotacaoDataAccess cotacaoDataAccessPesquisador;
 
   @BeforeEach
   void setUp() {
     MockitoAnnotations.openMocks(this);
-    cotacaoDataAccessPesquisador = CotacaoPesquisadorDataAccessFactory.instance().create(cotacaoDataAccessRepository);
+    cotacaoDataAccessPesquisador = PesquisadorCotacaoDataAccessFactory.instance().create(cotacaoDataAccessRepository);
   }
 
   @Test

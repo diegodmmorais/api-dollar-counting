@@ -1,6 +1,6 @@
 package com.lukeware.cotacao.implementacao.pesquisador;
 
-import com.lukeware.cotacao.ICotacaoPesquisadorDataAccess;
+import com.lukeware.cotacao.IPesquisadorCotacaoDataAccess;
 import com.lukeware.cotacao.dto.CotacaoDataAccessResponse;
 import com.lukeware.cotacao.dto.CotacaoResponse;
 import com.lukeware.cotacao.IPesquisadorCotacao;
@@ -27,7 +27,7 @@ class PesquisadorCotacaoInteractorTest {
   IPesquisadorCotacao pesquisadorCotacao;
 
   @Mock
-  ICotacaoPesquisadorDataAccess dataAccessPesquisador;
+  IPesquisadorCotacaoDataAccess dataAccessPesquisador;
 
 
   @BeforeEach

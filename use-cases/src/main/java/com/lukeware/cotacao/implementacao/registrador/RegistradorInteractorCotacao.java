@@ -1,9 +1,9 @@
 package com.lukeware.cotacao.implementacao.registrador;
 
-import com.lukeware.cotacao.ICotacaoRegistradorDataAccess;
+import com.lukeware.cotacao.IRegistradorCotacaoDataAccess;
 import com.lukeware.cotacao.dto.CotacaoDataAccessRequest;
 import com.lukeware.cotacao.dto.CotacaoRequest;
-import com.lukeware.cotacao.ICotacaoRegistrador;
+import com.lukeware.cotacao.IRegistradorCotacao;
 import com.lukeware.entities.CotacaoBuilder;
 
 import java.time.LocalDateTime;
@@ -11,11 +11,11 @@ import java.time.LocalDateTime;
 /**
  * @author Diego Morais
  */
-final class RegistradorCotacaoInteractor implements ICotacaoRegistrador {
+final class RegistradorInteractorCotacao implements IRegistradorCotacao {
 
-  private final ICotacaoRegistradorDataAccess cotacaoDataAccess;
+  private final IRegistradorCotacaoDataAccess cotacaoDataAccess;
 
-  RegistradorCotacaoInteractor(ICotacaoRegistradorDataAccess cotacaoDataAccess) {
+  RegistradorInteractorCotacao(IRegistradorCotacaoDataAccess cotacaoDataAccess) {
     this.cotacaoDataAccess = cotacaoDataAccess;
   }
 

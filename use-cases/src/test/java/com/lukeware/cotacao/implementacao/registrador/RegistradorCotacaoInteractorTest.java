@@ -1,9 +1,9 @@
 package com.lukeware.cotacao.implementacao.registrador;
 
 import com.lukeware.cotacao.dto.CotacaoRequest;
-import com.lukeware.cotacao.ICotacaoRegistradorDataAccess;
+import com.lukeware.cotacao.IRegistradorCotacaoDataAccess;
 import com.lukeware.cotacao.dto.CotacaoDataAccessRequest;
-import com.lukeware.cotacao.ICotacaoRegistrador;
+import com.lukeware.cotacao.IRegistradorCotacao;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -23,12 +23,12 @@ import java.time.LocalDate;
 class RegistradorCotacaoInteractorTest {
 
   @Mock
-  ICotacaoRegistradorDataAccess cotacaoDataAccess;
+  IRegistradorCotacaoDataAccess cotacaoDataAccess;
 
   @Captor
   ArgumentCaptor<CotacaoDataAccessRequest> dataAccessCaptor;
 
-  ICotacaoRegistrador cotacaoRegistrador;
+  IRegistradorCotacao cotacaoRegistrador;
 
   @BeforeEach
   void setUp() {

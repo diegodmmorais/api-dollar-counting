@@ -1,6 +1,6 @@
 package com.lukeware.repository;
 
-import com.lukeware.cotacao.repository.ICotacaoRegistradorRepository;
+import com.lukeware.cotacao.repository.IRegistradorCotacaoRepository;
 import com.lukeware.cotacao.dto.CotacaoDataAccessRequest;
 import org.springframework.stereotype.Component;
 
@@ -8,11 +8,11 @@ import org.springframework.stereotype.Component;
  * @author Diego Morais
  */
 @Component
-public class CotacaoRegistradorRepository implements ICotacaoRegistradorRepository {
+public class RegistradorCotacaoRepository implements IRegistradorCotacaoRepository {
 
-  private ICotacaoRepository cotacaoRepository;
+  private IRepositoryCotacao cotacaoRepository;
 
-  public CotacaoRegistradorRepository(ICotacaoRepository cotacaoRepository) {
+  public RegistradorCotacaoRepository(IRepositoryCotacao cotacaoRepository) {
     this.cotacaoRepository = cotacaoRepository;
   }
 

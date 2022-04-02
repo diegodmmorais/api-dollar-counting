@@ -1,7 +1,7 @@
 package com.lukeware.cotacao.implementacao.registrador;
 
-import com.lukeware.cotacao.ICotacaoRegistradorDataAccess;
-import com.lukeware.cotacao.ICotacaoRegistrador;
+import com.lukeware.cotacao.IRegistradorCotacaoDataAccess;
+import com.lukeware.cotacao.IRegistradorCotacao;
 
 import java.util.Objects;
 
@@ -27,7 +27,7 @@ public final class RegistradorCotacaoFactory {
     return cotacaoInteractorFactory;
   }
 
-  public ICotacaoRegistrador create(ICotacaoRegistradorDataAccess cotacaoDataAccess) {
-    return new RegistradorCotacaoInteractor(cotacaoDataAccess);
+  public IRegistradorCotacao create(IRegistradorCotacaoDataAccess cotacaoDataAccess) {
+    return new RegistradorInteractorCotacao(cotacaoDataAccess);
   }
 }

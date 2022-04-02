@@ -22,10 +22,10 @@ import java.util.stream.Stream;
 class CotacaoPesquisadorRepositoryTest {
 
   @Mock
-  ICotacaoRepository cotacaoRepository;
+  IRepositoryCotacao cotacaoRepository;
 
   @InjectMocks
-  CotacaoPesquisadorRepository cotacaoPesquisadorRepository;
+  PesquisadorCotacaoRepository cotacaoPesquisadorRepository;
 
   @BeforeEach
   void setUp() {
