@@ -1,1 +1,2 @@
-/Users/diegomorais/workspace/testes-tecnico/api-dollar-counting/gateway-database/src/test/java/com/lukeware/cotacao/implementacao/CotacaoPesquisadorDataAccessTest.java
+/Users/diegomorais/workspace/testes-tecnico/api-dollar-counting/gateway-database/src/test/java/com/lukeware/cotacao/implementacao/registrador/CotacaoRegistradorDataAccessTest.java
+/Users/diegomorais/workspace/testes-tecnico/api-dollar-counting/gateway-database/src/test/java/com/lukeware/cotacao/implementacao/pesquisador/CotacaoPesquisadorDataAccessTest.java
