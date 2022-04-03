@@ -72,6 +72,8 @@
             <exclude>**/*Test.*</exclude>
             <exclude>**/*Config.*</exclude>
             <exclude>**/*Exception.*</exclude>
+            <exclude>**/*Proxy.*</exclude>
+            <exclude>**/*Repository.*</exclude>
           </excludes>
         </configuration>
         <executions>

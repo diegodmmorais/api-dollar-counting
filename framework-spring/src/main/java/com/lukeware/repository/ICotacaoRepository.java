@@ -10,7 +10,7 @@ import java.util.Optional;
 /**
  * @author Diego Morais
  */
-public interface IRepositoryCotacao extends MongoRepository<CotacaoMapper, String> {
+public interface ICotacaoRepository extends MongoRepository<CotacaoMapper, String> {
   Optional<CotacaoMapper> findByDataCotacao(LocalDate dataCotacao);
 
   @Query("{'dataCotacao' : { $gte: ?0, $lte: ?1 }}")

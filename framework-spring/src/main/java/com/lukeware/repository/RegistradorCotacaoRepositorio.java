@@ -8,11 +8,11 @@ import org.springframework.stereotype.Component;
  * @author Diego Morais
  */
 @Component
-public class RegistradorCotacaoRepository implements IRegistradorCotacaoRepository {
+public class RegistradorCotacaoRepositorio implements IRegistradorCotacaoRepository {
 
-  private IRepositoryCotacao cotacaoRepository;
+  private ICotacaoRepository cotacaoRepository;
 
-  public RegistradorCotacaoRepository(IRepositoryCotacao cotacaoRepository) {
+  public RegistradorCotacaoRepositorio(ICotacaoRepository cotacaoRepository) {
     this.cotacaoRepository = cotacaoRepository;
   }
 

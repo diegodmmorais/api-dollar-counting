@@ -19,7 +19,7 @@ import java.util.Map;
  * @author Diego Morais
  */
 @ControllerAdvice
-public class InteceptadorDeExcecao extends ResponseEntityExceptionHandler {
+public class InteceptadorException extends ResponseEntityExceptionHandler {
 
   @ExceptionHandler({PesquisadorCotacaoException.class})
   public ResponseEntity<Map<String, Object>> excecoesNaPesquisa(PesquisadorCotacaoException ex, WebRequest request) {
