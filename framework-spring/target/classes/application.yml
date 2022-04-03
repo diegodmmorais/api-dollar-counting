@@ -1,0 +1,21 @@
+spring:
+  data:
+    mongodb:
+      user: admin
+      password: admin123
+      uri: mongodb://admin:admin123@127.0.0.1:27017/lukeware?authSource=admin
+
+logging:
+  level:
+    com.lukeware.*: DEBUG
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
+  cotacaoProxy:
+    name: IPesquisadorCotacaoProxy
+    url: https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/
