@@ -18,9 +18,9 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Document("cotacoes")
 @EqualsAndHashCode
 @Builder
+@Document("cotacoes")
 public class CotacaoMapper {
   @Id
   private String id;

@@ -5,6 +5,7 @@ import com.lukeware.cotacao.api.IPesquisadorCotacaoApi;
 import com.lukeware.cotacao.dto.CotacaoApiResponse;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
@@ -16,6 +17,8 @@ import java.util.Optional;
 public class PesquisadorCotacaoApi implements IPesquisadorCotacaoApi {
 
   private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
+  private static final DateTimeFormatter FORMATTER_ORIGINAL = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+  private static final DateTimeFormatter FORMATTER_FILTER = DateTimeFormatter.ofPattern("MM-dd-yyyy");
 
   private final IPesquisadorCotacaoProxy pesquisadorCotacaoProxy;
 
@@ -23,16 +26,17 @@ public class PesquisadorCotacaoApi implements IPesquisadorCotacaoApi {
     this.pesquisadorCotacaoProxy = pesquisadorCotacaoProxy;
   }
 
-  /**
-   * %2703-31-2022%27
-   *
-   * @param dataCotacao
-   * @return
-   */
   @Override
   public Optional<CotacaoApiResponse> buscar(String dataCotacao) {
-    final var clientResponse = this.pesquisadorCotacaoProxy.cotacaoDolarDia("%27" + dataCotacao + "%27", "json");
-    return clientResponse.getCotacoes().stream().map(this::toResponse).findFirst();
+    return this.pesquisadorCotacaoProxy.cotacaoDolarDia(dataCotacaoRequest(dataCotacao), "json")
+                                       .getCotacoes()
+                                       .stream()
+                                       .map(this::toResponse)
+                                       .findFirst();
+  }
+
+  private String dataCotacaoRequest(String dataCotacao) {
+    return "%27" + LocalDate.parse(dataCotacao, FORMATTER_ORIGINAL).format(FORMATTER_FILTER) + "%27";
   }
 
   private CotacaoApiResponse toResponse(CotacaoClient cotacaoClient) {

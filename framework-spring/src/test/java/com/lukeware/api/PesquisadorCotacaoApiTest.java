@@ -40,7 +40,7 @@ class PesquisadorCotacaoApiTest {
     final var clientResponse = new CotacaoClientResponse();
     clientResponse.setCotacoes(Stream.of(cotacaoClient).collect(Collectors.toList()));
 
-    Mockito.when(this.pesquisadorCotacaoProxy.cotacaoDolarDia("%2712-04-2022%27", "json")).thenReturn(clientResponse);
+    Mockito.when(this.pesquisadorCotacaoProxy.cotacaoDolarDia("%2704-12-2022%27", "json")).thenReturn(clientResponse);
 
     final var cotacaoApiResponse = this.pesquisadorCotacaoApi.buscar("12-04-2022");
 

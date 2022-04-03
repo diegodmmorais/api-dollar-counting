@@ -3,9 +3,11 @@ spring:
     mongodb:
       user: admin
       password: admin123
-      uri: mongodb://127.0.0.1:27017/db
+      uri: mongodb://admin:admin123@127.0.0.1:27017/lukeware?authSource=admin
 
-
+logging:
+  level:
+    com.lukeware.*: DEBUG
 
 feign:
   client:

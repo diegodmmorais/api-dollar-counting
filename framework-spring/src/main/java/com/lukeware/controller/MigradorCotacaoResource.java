@@ -21,6 +21,6 @@ public class MigradorCotacaoResource {
 
   @GetMapping("/migrar")
   public void migrar(@RequestParam String dataCotacao) {
-    migradorCotacaoController.migrar(dataCotacao);
+    this.migradorCotacaoController.migrar(dataCotacao);
   }
 }
