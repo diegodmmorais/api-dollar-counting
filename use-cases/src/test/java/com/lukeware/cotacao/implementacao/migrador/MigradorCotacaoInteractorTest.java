@@ -81,4 +81,22 @@ class MigradorCotacaoInteractorTest {
 
   }
 
+  @Test
+  @DisplayName("1 - migrando a cotação dolar do dia com data de contação nula")
+  void migrando_a_cotacao_dolar_do_dia_com_data_de_contacao_nula() {
+    Assertions.assertThatThrownBy(() -> this.cotacaoMigrador.migrar(null))
+              .isInstanceOf(MigradorCotacaoException.class)
+              .hasMessageContaining("Data inválida");
+
+  }
+
+  @Test
+  @DisplayName("1 - migrando a cotação dolar do dia com data de contação invalida")
+  void migrando_a_cotacao_dolar_do_dia_com_data_de_contacao_invalida() {
+    Assertions.assertThatThrownBy(() -> this.cotacaoMigrador.migrar("32-02-2022"))
+              .isInstanceOf(MigradorCotacaoException.class)
+              .hasMessageContaining("Data inválida");
+
+  }
+
 }

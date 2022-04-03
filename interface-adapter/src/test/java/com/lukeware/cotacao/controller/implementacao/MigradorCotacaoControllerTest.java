@@ -13,7 +13,7 @@ import org.mockito.MockitoAnnotations;
 /**
  * @author Diego Morais
  */
-@DisplayName("Testando o controlador de contações")
+@DisplayName("Testando o controlador de cotações")
 class MigradorCotacaoControllerTest {
 
   @Mock
@@ -28,8 +28,8 @@ class MigradorCotacaoControllerTest {
   }
 
   @Test
-  @DisplayName("1 - Testando a migração de contações")
-  void testando_a_migração_de_contacoes() {
+  @DisplayName("1 - testando a migração de cotações")
+  void testando_a_migração_de_cotacoes() {
 
     Mockito.doNothing().when(cotacaoMigrador).migrar("12-04-2022");
 

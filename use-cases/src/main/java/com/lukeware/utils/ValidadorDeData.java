@@ -51,6 +51,6 @@ final class ValidadorDeData implements IValidadorDeData {
       final var novaDataFinal = LocalDate.parse(dataFinal, this.dateFormatter);
       return ChronoUnit.DAYS.between(novaDataIncial, novaDataFinal);
     }
-    return 0;
+    throw new IllegalArgumentException("Data inválida: " + dataIncial + ", " + dataFinal);
   }
 }

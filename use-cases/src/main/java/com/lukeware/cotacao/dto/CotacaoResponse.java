@@ -2,15 +2,11 @@ package com.lukeware.cotacao.dto;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 /**
  * @author Diego Morais
  */
 public class CotacaoResponse {
-
-  private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
-
 
   private Double cotacaoCompra;
   private Double cotacaoVenda;
@@ -36,10 +32,6 @@ public class CotacaoResponse {
 
   public LocalDateTime getDataHoraCotacao() {
     return dataHoraCotacao;
-  }
-
-  public String getDataHoraCotacaoString() {
-    return dataHoraCotacao.format(FORMATTER);
   }
 
   public LocalDate getDataCotacao() {

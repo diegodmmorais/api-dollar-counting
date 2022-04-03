@@ -1,7 +1,7 @@
 package com.lukeware.cotacao.implementacao.pesquisador;
 
-import com.lukeware.cotacao.IPesquisadorCotacaoDataAccess;
 import com.lukeware.cotacao.IPesquisadorCotacao;
+import com.lukeware.cotacao.IPesquisadorCotacaoDataAccess;
 import com.lukeware.cotacao.dto.CotacaoDataAccessResponse;
 import com.lukeware.cotacao.dto.CotacaoResponse;
 import com.lukeware.utils.IValidadorDeData;
@@ -32,11 +32,11 @@ final class PesquisadorCotacaoInteractor implements IPesquisadorCotacao {
 
   private void validarDatas(String dataIncial, String dataFinal) {
     if (!validadorDeData.dataEMenor(dataIncial, dataFinal)) {
-      throw new PesquisadorCotacaoException("Data usada para pesquisa está inválida dd-MM-yyyy(12-04-2022). Data inicial deverá ser menor igual a data final.");
+      throw new PesquisadorCotacaoException("Data utilizada está incosistênte", "Data pode está inválida ou a data inicial está maior que a data final");
     }
 
     if (validadorDeData.quantidadeDiasEntreDatas(dataIncial, dataFinal) > 30) {
-      throw new PesquisadorCotacaoException("O intervalo entre as datas está maior que 30 dias.");
+      throw new PesquisadorCotacaoException("Data utilizada está incosistênte", "O intervalo entre as datas está maior que 30 dias.");
     }
   }
 

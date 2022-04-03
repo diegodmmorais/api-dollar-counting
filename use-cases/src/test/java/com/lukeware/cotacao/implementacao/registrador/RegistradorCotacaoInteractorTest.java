@@ -38,7 +38,7 @@ class RegistradorCotacaoInteractorTest {
   }
 
   @Test
-  @DisplayName("1 - Registrando uma cotação encontrando que não está registrada no banco")
+  @DisplayName("1 - registrando uma cotação encontrando que não está registrada no banco")
   void registrar() {
     final var cotacaoRequest = new CotacaoRequest(4.85, 4.95, LocalDateTime.of(2022, 4, 12, 0, 0));
 

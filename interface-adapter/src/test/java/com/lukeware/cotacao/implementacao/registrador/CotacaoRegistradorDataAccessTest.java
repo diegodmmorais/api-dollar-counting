@@ -32,7 +32,7 @@ class CotacaoRegistradorDataAccessTest {
   }
 
   @Test
-  @DisplayName("1 - Registrando um cotação")
+  @DisplayName("1 - registrando um cotação")
   void registrando_um_cotacao() {
     final var accessRequest = CotacaoDataAccessRequest.Builder
         .builder()

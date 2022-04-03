@@ -39,10 +39,11 @@ final class Cotacao implements ICotacao {
   }
 
   @Override
-  public void validarInformacoes() {
+  public boolean validarInformacoes() {
+    Objects.requireNonNull(this.dataHoraCotacao, "Data da cotação é obrigatório");
     Objects.requireNonNull(this.cotacaoCompra, "Cotação de compra é obrigatório");
     Objects.requireNonNull(this.cotacaoVenda, "Cotação de venda é obrigatório");
-    Objects.requireNonNull(this.dataHoraCotacao, "Data da cotação é obrigatório");
+    return true;
   }
 
   @Override

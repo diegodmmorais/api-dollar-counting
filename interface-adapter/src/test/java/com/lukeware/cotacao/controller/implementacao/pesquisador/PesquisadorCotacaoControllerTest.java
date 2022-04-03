@@ -19,7 +19,7 @@ import java.util.stream.Stream;
 /**
  * @author Diego Morais
  */
-@DisplayName("Testando a pesquisa de contações pelo controller")
+@DisplayName("Testando a pesquisa de cotações pelo controller")
 class PesquisadorCotacaoControllerTest {
 
   @Mock
@@ -34,7 +34,7 @@ class PesquisadorCotacaoControllerTest {
   }
 
   @Test
-  @DisplayName("1 - Pesquisando cotação entre datas")
+  @DisplayName("1 - pesquisando cotação entre datas")
   void pesquisando_cotacao_entre_datas() {
     final var cotacaoResponse = CotacaoResponse.Builder
         .builder()

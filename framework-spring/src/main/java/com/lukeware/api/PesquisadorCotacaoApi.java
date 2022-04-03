@@ -1,12 +1,12 @@
 package com.lukeware.api;
 
 import com.lukeware.api.dto.CotacaoClient;
+import com.lukeware.api.util.UtilitarioData;
 import com.lukeware.cotacao.api.IPesquisadorCotacaoApi;
 import com.lukeware.cotacao.dto.CotacaoApiResponse;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
@@ -16,7 +16,6 @@ import java.util.Optional;
 @Component
 public class PesquisadorCotacaoApi implements IPesquisadorCotacaoApi {
 
-  private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
   private static final DateTimeFormatter FORMATTER_ORIGINAL = DateTimeFormatter.ofPattern("dd-MM-yyyy");
   private static final DateTimeFormatter FORMATTER_FILTER = DateTimeFormatter.ofPattern("MM-dd-yyyy");
 
@@ -42,7 +41,7 @@ public class PesquisadorCotacaoApi implements IPesquisadorCotacaoApi {
   private CotacaoApiResponse toResponse(CotacaoClient cotacaoClient) {
     return CotacaoApiResponse.Builder.builder().cotacaoCompra(cotacaoClient.getCotacaoCompra())
                                      .cotacaoVenda(cotacaoClient.getCotacaoVenda())
-                                     .dataHoraCotacao(LocalDateTime.parse(cotacaoClient.getDataHoraCotacao(), FORMATTER))
+                                     .dataHoraCotacao(UtilitarioData.paraDataEHora(cotacaoClient.getDataHoraCotacao()))
                                      .build();
   }
 }

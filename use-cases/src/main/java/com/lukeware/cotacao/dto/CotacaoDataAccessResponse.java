@@ -11,15 +11,13 @@ import java.util.Objects;
  */
 public final class CotacaoDataAccessResponse {
 
-  private String id;
   private Double cotacaoCompra;
   private Double cotacaoVenda;
   private LocalDateTime dataHoraCotacao;
   private LocalDate dataCotacao;
   private LocalDateTime tempoDaRequisicao;
 
-  public CotacaoDataAccessResponse(String id, Double cotacaoCompra, Double cotacaoVenda, LocalDateTime dataHoraCotacao, LocalDate dataCotacao, LocalDateTime tempoDaRequisicao) {
-    this.id = id;
+  public CotacaoDataAccessResponse(Double cotacaoCompra, Double cotacaoVenda, LocalDateTime dataHoraCotacao, LocalDate dataCotacao, LocalDateTime tempoDaRequisicao) {
     this.cotacaoCompra = cotacaoCompra;
     this.cotacaoVenda = cotacaoVenda;
     this.dataHoraCotacao = dataHoraCotacao;
@@ -47,34 +45,8 @@ public final class CotacaoDataAccessResponse {
     return tempoDaRequisicao;
   }
 
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    CotacaoDataAccessResponse that = (CotacaoDataAccessResponse) o;
-    return Objects.equals(cotacaoCompra, that.cotacaoCompra) && Objects.equals(cotacaoVenda, that.cotacaoVenda) && Objects.equals(dataCotacao, that.dataCotacao);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(cotacaoCompra, cotacaoVenda, dataCotacao);
-  }
-
-  @Override
-  public String toString() {
-    return "CotacaoDataAccessResponse{" +
-        "id='" + id + '\'' +
-        ", cotacaoCompra=" + cotacaoCompra +
-        ", cotacaoVenda=" + cotacaoVenda +
-        ", dataHoraCotacao=" + dataHoraCotacao +
-        ", dataCotacao=" + dataCotacao +
-        ", tempoDaRequisicao=" + tempoDaRequisicao +
-        '}';
-  }
-
   public static final class Builder {
 
-    private String id;
     private Double cotacaoCompra;
     private Double cotacaoVenda;
     private LocalDateTime dataHoraCotacao;
@@ -87,11 +59,6 @@ public final class CotacaoDataAccessResponse {
 
     public static Builder builder() {
       return new Builder();
-    }
-
-    public Builder id(String id) {
-      this.id = id;
-      return this;
     }
 
     public Builder cotacaoCompra(Double cotacaoCompra) {
@@ -120,11 +87,8 @@ public final class CotacaoDataAccessResponse {
     }
 
     public CotacaoDataAccessResponse build() {
-      return new CotacaoDataAccessResponse(this.id, this.cotacaoCompra, this.cotacaoVenda, this.dataHoraCotacao, this.dataCotacao, this.tempoDaRequisicao);
+      return new CotacaoDataAccessResponse(this.cotacaoCompra, this.cotacaoVenda, this.dataHoraCotacao, this.dataCotacao, this.tempoDaRequisicao);
     }
 
-    public CotacaoBuilder dataCotacaoFinal(String dataFinal) {
-      return null;
-    }
   }
 }

@@ -27,7 +27,7 @@ import org.springframework.context.annotation.Configuration;
  * @author Diego Morais
  */
 @Configuration
-class FabricaDeBean {
+class FabricaDeBeanConfig {
 
   @Autowired
   ICotacaoPesquisadorRepository cotacaoPesquisadorRepository;

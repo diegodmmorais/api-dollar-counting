@@ -75,4 +75,24 @@ class ValidadorDeDataTest {
 
     Assertions.assertThat(validadorDeData.quantidadeDiasEntreDatas("01-04-2022", "12-04-2022")).isEqualTo(11);
   }
+
+  @Test
+  @DisplayName("9 - validando a quantidade de dias entre duas datas com uma data inválida")
+  void validando_a_quantidade_de_dias_entre_duas_datas_com_uma_data_inicial_invalida() {
+    final var validadorDeData = ValidadorDeDataFactory.instance().create(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+
+    Assertions.assertThatThrownBy(() -> validadorDeData.quantidadeDiasEntreDatas("32-04-2022", "12-04-2022"))
+              .isInstanceOf(IllegalArgumentException.class)
+              .hasMessageContaining("Data inválida: 32-04-2022, 12-04-2022");
+  }
+
+  @Test
+  @DisplayName("9 - validando a quantidade de dias entre duas datas com uma data inválida")
+  void validando_a_quantidade_de_dias_entre_duas_datas_com_uma_data_final_invalida() {
+    final var validadorDeData = ValidadorDeDataFactory.instance().create(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+
+    Assertions.assertThatThrownBy(() -> validadorDeData.quantidadeDiasEntreDatas("01-04-2022", "34-04-2022"))
+              .isInstanceOf(IllegalArgumentException.class)
+              .hasMessageContaining("Data inválida: 01-04-2022, 34-04-2022");
+  }
 }

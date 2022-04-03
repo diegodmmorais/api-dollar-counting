@@ -37,7 +37,7 @@ class PesquisadorCotacaoInteractorTest {
   }
 
   @Test
-  @DisplayName("1 - Pesquisando a cotação do dia")
+  @DisplayName("1 - pesquisando a cotação do dia")
   void pesquisando_a_cotacao_do_dia() {
     final var responses = Stream.of(CotacaoDataAccessResponse.Builder.builder()
                                                                      .cotacaoCompra(4.85)
@@ -70,30 +70,30 @@ class PesquisadorCotacaoInteractorTest {
   }
 
   @Test
-  @DisplayName("2 - Pesquisando a cotação com data inválida")
+  @DisplayName("2 - pesquisando a cotação com data inválida")
   void pesquisando_a_cotacao_com_data_invalida() {
     Assertions.assertThatThrownBy(() -> this.pesquisadorCotacao.pesquisar("", "12-04-2022"))
               .isInstanceOf(PesquisadorCotacaoException.class)
-              .hasMessageContaining("Data usada para pesquisa está inválida dd-MM-yyyy(12-04-2022). Data inicial deverá ser menor igual a data final");
+              .hasMessageContaining("Data utilizada está incosistênte");
 
     Assertions.assertThatThrownBy(() -> this.pesquisadorCotacao.pesquisar("12-04-2022", ""))
               .isInstanceOf(PesquisadorCotacaoException.class)
-              .hasMessageContaining("Data usada para pesquisa está inválida dd-MM-yyyy(12-04-2022). Data inicial deverá ser menor igual a data final");
+              .hasMessageContaining("Data utilizada está incosistênte");
 
     Assertions.assertThatThrownBy(() -> this.pesquisadorCotacao.pesquisar("12-04-2022", "01-04-2022"))
               .isInstanceOf(PesquisadorCotacaoException.class)
-              .hasMessageContaining("Data usada para pesquisa está inválida dd-MM-yyyy(12-04-2022). Data inicial deverá ser menor igual a data final");
+              .hasMessageContaining("Data utilizada está incosistênte");
   }
 
   @Test
-  @DisplayName("3 - Pesquisando a cotações com intervalo maior que 30 dias")
+  @DisplayName("3 - pesquisando a cotações com intervalo maior que 30 dias")
   void pesquisando_a_cotacoes_com_intervalo_maior_que_30_dias() {
     Assertions.assertThatThrownBy(() -> this.pesquisadorCotacao.pesquisar("12-04-2019", "12-04-2022"))
               .isInstanceOf(PesquisadorCotacaoException.class)
-              .hasMessageContaining("O intervalo entre as datas está maior que 30 dias.");
+              .hasMessageContaining("Data utilizada está incosistênte");
 
     Assertions.assertThatThrownBy(() -> this.pesquisadorCotacao.pesquisar("01-04-2022", "02-05-2022"))
               .isInstanceOf(PesquisadorCotacaoException.class)
-              .hasMessageContaining("O intervalo entre as datas está maior que 30 dias.");
+              .hasMessageContaining("Data utilizada está incosistênte");
   }
 }

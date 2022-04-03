@@ -15,5 +15,5 @@ public interface ICotacao {
 
   LocalDate getDataCotacao();
 
-  void validarInformacoes();
+  boolean validarInformacoes();
 }

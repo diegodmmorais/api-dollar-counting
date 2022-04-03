@@ -14,13 +14,15 @@ import java.time.LocalDateTime;
 class CotacaoBuilderTest {
 
   @Test
-  @DisplayName("1 - Construindo um objeto de cotação")
+  @DisplayName("1 - construindo um objeto de cotação")
   void construindo_um_objeto_de_cotacao() {
     final var cotacao = CotacaoBuilder.builder()
                                       .cotacaoCompra(4.73720)
                                       .cotacaoVenda(4.73780)
                                       .dataHoraCotacao(LocalDateTime.of(2022, 03, 31, 14, 36, 26))
                                       .build();
+
+    System.out.println(cotacao);
 
     Assertions.assertThat(cotacao)
               .isNotNull();
@@ -46,7 +48,7 @@ class CotacaoBuilderTest {
   }
 
   @Test
-  @DisplayName("2 - Verificando se um cotação e igual a outra cotação")
+  @DisplayName("2 - verificando se um cotação e igual a outra cotação")
   void verificando_se_um_cotacao_e_igual_a_outra_cotacao() {
     final var cotacao1 = CotacaoBuilder.builder().cotacaoCompra(4.73720).cotacaoVenda(4.73780)
                                        .dataHoraCotacao("2022-03-31 14:36:26.861").build();
@@ -59,7 +61,7 @@ class CotacaoBuilderTest {
   }
 
   @Test
-  @DisplayName("3 - Verificando se um cotação e diferente a outra cotação")
+  @DisplayName("3 - verificando se um cotação e diferente a outra cotação")
   void verificando_se_um_cotacao_e_diferente_a_outra_cotacao() {
     final var cotacao1 = CotacaoBuilder.builder()
                                        .cotacaoCompra(4.73720)
@@ -78,7 +80,7 @@ class CotacaoBuilderTest {
   }
 
   @Test
-  @DisplayName("4 - Validando os campos obrigatórios válidos")
+  @DisplayName("4 - validando os campos obrigatórios válidos")
   void Validar_os_campos_obrigatorios_validos() {
     final var cotacao1 = CotacaoBuilder.builder()
                                        .cotacaoVenda(4.73780)
@@ -130,5 +132,50 @@ class CotacaoBuilderTest {
 
     Assertions.assertThat(cotacao4.toString())
               .isEqualTo("Cotacao{cotacaoCompra=4.7372, cotacaoVenda=4.7378, dataHoraCotacao=2022-03-31T14:36:26}");
+  }
+
+  @Test
+  @DisplayName("5 - validar a consistência dos dados")
+  void validar_a_consistencia_dos_dados() {
+    final var cotacao = CotacaoBuilder.builder()
+                                      .cotacaoCompra(4.73720)
+                                      .cotacaoVenda(4.73780)
+                                      .build();
+
+
+    Assertions.assertThat(cotacao)
+              .isNotNull();
+
+    Assertions.assertThat(cotacao.getCotacaoCompra())
+              .isNotNull()
+              .isEqualTo(4.73720);
+
+    Assertions.assertThat(cotacao.getCotacaoVenda())
+              .isNotNull()
+              .isEqualTo(4.73780);
+
+    Assertions.assertThatThrownBy(() -> cotacao.validarInformacoes())
+              .isInstanceOf(NullPointerException.class)
+              .hasMessageContaining("Data da cotação é obrigatório");
+  }
+
+  @Test
+  @DisplayName("6 - validando se duas contações são iguais")
+  void validando_se_duas_contacoes_sao_iguais() {
+    final var cotacao = CotacaoBuilder.builder()
+                                      .cotacaoCompra(4.73720)
+                                      .cotacaoVenda(4.73780)
+                                      .dataHoraCotacao(LocalDateTime.of(2019, 03, 30, 14, 36, 26))
+                                      .build();
+
+    final var cotacao2 = CotacaoBuilder.builder()
+                                       .cotacaoCompra(4.73720)
+                                       .cotacaoVenda(4.73780)
+                                       .dataHoraCotacao(LocalDateTime.of(2019, 03, 30, 14, 36, 26))
+                                       .build();
+
+    Assertions.assertThat(cotacao.equals(cotacao2)).isTrue();
+    Assertions.assertThat(cotacao.validarInformacoes()).isTrue();
+    Assertions.assertThat(cotacao2.validarInformacoes()).isTrue();
   }
 }

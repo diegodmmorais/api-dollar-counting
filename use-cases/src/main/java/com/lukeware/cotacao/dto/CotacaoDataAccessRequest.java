@@ -49,28 +49,6 @@ public final class CotacaoDataAccessRequest {
     return tempoDaRequisicao;
   }
 
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    CotacaoDataAccessRequest that = (CotacaoDataAccessRequest) o;
-    return Objects.equals(cotacaoCompra, that.cotacaoCompra) && Objects.equals(cotacaoVenda, that.cotacaoVenda) && Objects.equals(dataCotacao, that.dataCotacao);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(cotacaoCompra, cotacaoVenda, dataCotacao);
-  }
-
-  @Override
-  public String toString() {
-    return "CotacaoDataAccessRequest{" +
-        "cotacaoCompra=" + cotacaoCompra +
-        ", cotacaoVenda=" + cotacaoVenda +
-        ", dataHoraCotacao=" + dataHoraCotacao +
-        '}';
-  }
-
   public static final class Builder {
 
     private Double cotacaoCompra;

@@ -37,7 +37,7 @@ class CotacaoPesquisadorDataAccessTest {
   }
 
   @Test
-  @DisplayName("1 - Buscando cotação do dia")
+  @DisplayName("1 - buscando cotação do dia")
   void buscando_cotacao_do_dia() {
 
     final var dataAccessResponse = CotacaoDataAccessResponse.Builder.builder().cotacaoCompra(4.85).cotacaoVenda(4.95)
@@ -64,7 +64,7 @@ class CotacaoPesquisadorDataAccessTest {
   }
 
   @Test
-  @DisplayName("1 - Buscando cotação no intervalo do duas datas")
+  @DisplayName("1 - buscando cotação no intervalo do duas datas")
   void buscando_cotacao_no_intervalo_do_duas_datas() {
     final var dataAccessResponse = CotacaoDataAccessResponse.Builder.builder().cotacaoCompra(4.85).cotacaoVenda(4.95)
                                                                     .dataCotacao(LocalDate.of(2022, 4, 12))

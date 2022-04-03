@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 /**
  * @author Diego Morais
  */
-@DisplayName("Testando a pesistência da contação")
+@DisplayName("Testando a pesistência da cotação")
 class CotacaoRegistradorRepositoryTest {
 
   @Mock

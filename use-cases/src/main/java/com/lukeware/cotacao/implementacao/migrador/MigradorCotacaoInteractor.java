@@ -7,6 +7,7 @@ import com.lukeware.cotacao.IRegistradorCotacao;
 import com.lukeware.cotacao.IRegistradorCotacaoDataAccess;
 import com.lukeware.cotacao.dto.CotacaoApiResponse;
 import com.lukeware.cotacao.dto.CotacaoRequest;
+import com.lukeware.utils.IValidadorDeData;
 
 /**
  * @author Diego Morais
@@ -17,21 +18,31 @@ final class MigradorCotacaoInteractor implements IMigradorCotacaoInteractor {
   private final IPesquisadorCotacaoDataAccess dataAccessPesquisador;
   private final ICotacaoApiAdapter cotacaoAdapter;
   private final IRegistradorCotacao cotacaoRegistrador;
+  private final IValidadorDeData validadorDeData;
 
   public MigradorCotacaoInteractor(IRegistradorCotacaoDataAccess dataAccessRegistrador,
                                    ICotacaoApiAdapter cotacaoAdapter,
                                    IRegistradorCotacao cotacaoRegistrador,
-                                   IPesquisadorCotacaoDataAccess dataAccessPesquisador) {
+                                   IPesquisadorCotacaoDataAccess dataAccessPesquisador,
+                                   IValidadorDeData validadorDeData) {
     this.dataAccessRegistrador = dataAccessRegistrador;
     this.cotacaoAdapter = cotacaoAdapter;
     this.cotacaoRegistrador = cotacaoRegistrador;
     this.dataAccessPesquisador = dataAccessPesquisador;
+    this.validadorDeData = validadorDeData;
   }
 
   @Override
   public void migrar(String dataCotacao) {
+    validarDataCotacao(dataCotacao);
     if (!this.dataAccessPesquisador.pesquisarPorData(dataCotacao).isPresent()) {
       registrar(dataCotacao);
+    }
+  }
+
+  private void validarDataCotacao(String dataCotacao) {
+    if (!validadorDeData.validar(dataCotacao)) {
+      throw new MigradorCotacaoException("Data inválida", "Verifique se a data informada é valida: " + dataCotacao);
     }
   }
 

@@ -1,11 +1,13 @@
 package com.lukeware.cotacao.implementacao.migrador;
 
 import com.lukeware.cotacao.ICotacaoApiAdapter;
-import com.lukeware.cotacao.IPesquisadorCotacaoDataAccess;
-import com.lukeware.cotacao.IRegistradorCotacaoDataAccess;
 import com.lukeware.cotacao.IMigradorCotacaoInteractor;
+import com.lukeware.cotacao.IPesquisadorCotacaoDataAccess;
 import com.lukeware.cotacao.IRegistradorCotacao;
+import com.lukeware.cotacao.IRegistradorCotacaoDataAccess;
+import com.lukeware.utils.ValidadorDeDataFactory;
 
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 /**
@@ -33,6 +35,7 @@ public final class MigradorCotacaoFactory {
                                            ICotacaoApiAdapter cotacaoAdapter,
                                            IRegistradorCotacao cotacaoRegistrador,
                                            IPesquisadorCotacaoDataAccess dataAccessPesquisador) {
-    return new MigradorCotacaoInteractor(cotacaoDataAccess, cotacaoAdapter, cotacaoRegistrador, dataAccessPesquisador);
+    return new MigradorCotacaoInteractor(cotacaoDataAccess, cotacaoAdapter, cotacaoRegistrador, dataAccessPesquisador, ValidadorDeDataFactory.instance()
+                                                                                                                                             .create(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
   }
 }
