@@ -28,3 +28,5 @@ hs_err_pid*
 /mongo_data/
 /interface-adapter/target/
 /framework-spring/target/
+
+.DS_Store
