@@ -50,10 +50,15 @@ Critério de aceite.
 
 #### Casos de teste
 CT1 - Ao listar as cotações sem passar nenhum data deverá receber uma mensagem informando a obrigatoriedade do campo data. :white_check_mark:
+
 CT2 - Ao listar as cotações e passa a data inicial menor que a datafinal, deverá receber uma mensagem informando data inválida. :white_check_mark:
+
 CT3 - Ao listar as contações passando as datas corretas, deverá retornar uma lista de cotação. :white_check_mark:
+
 CT4 - Validar se o agendamento de atualização de cotações busca a contação do dia sendo de segunda a sexta as 18h 30m através dos logs da aplicação. :white_check_mark:
+
 CT5 - Validar se os dados da API não estão inconsistentes. :white_check_mark:
+
 
 
 http://localhost:8080/api/documentacao/swagger
