@@ -87,3 +87,12 @@ Link swagger: http://localhost:8080/api/documentacao/swagger-ui/index.html
 
 # Acessar banco de dados
 Link do banco de dados http://localhost:8081/db/lukeware/
+
+# Detalhes Técnicos
+#### Arquitetura utilizada
+Clean architecture 
+#### Framework
+- Spring Boot
+- Spring Cloud Starter Feign
+- Spring Doc OpenApi
+- Lombok
