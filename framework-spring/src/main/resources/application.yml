@@ -31,6 +31,7 @@ aplicacao:
 
 # Configuracao documentação open api
 springdoc:
+  version: 1.0v
   swagger-ui:
     path: /api/documentacao/documentacao.html
   api-docs:

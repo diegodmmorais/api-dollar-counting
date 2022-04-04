@@ -85,4 +85,5 @@ class FabricaDeBeanConfig {
     return MigradorCotacaoControllerFactory.instance().create(migradorCotacaoInteractor);
   }
 
+
 }

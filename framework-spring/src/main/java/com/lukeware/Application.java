@@ -9,8 +9,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 /**
  * @author Diego Morais
  */
-@EnableAsync
-@EnableScheduling
 @EnableFeignClients
 @SpringBootApplication
 public class Application {
