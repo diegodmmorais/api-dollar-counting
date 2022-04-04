@@ -25,7 +25,7 @@ Requisitos
 
 
 ## Critérios de aceite
-História 1
+### História 1
 
 
 Eu desejo que seja desenvolvido um conector que tem como responsabilidade buscar o dólar atualizado conforme a data desejada.
@@ -34,21 +34,21 @@ Critério de aceite.
  - Deverá validar se o intervalo entre a data inicial e final é menor que os últimos 30 dias.
  - Deverá validar se a data inicial é maior que a data final.
  
-História 2
+### História 2
  Eu desejo que seja desenvolvido um "adapter data access" que tem como objetivo salvar, listar as contações.
 Critério de aceite.
 - Deverá salvar as cotações em um banco de dados NoSql
 - Deverá poder filtrar as cotações com base na data inicial e final com o intervalo de 30 dias limites.
 
 
-História 3
+### História 3
 Eu desejo que seja desenvolvido uma "API Client" que possibilite buscar uma lista de cotação na API https://dadosabertos.bcb.gov.br/dataset/dolar-americano-usd-todos-os-boletins-diarios.
 Critério de aceite.
 - Deverá buscar cotação por dia conforme a data informada.
 - Deverá buscar a contação de forma automatizada, de segunda a sexta as 18h 30m.
 
 
-#### Casos de teste
+### Casos de teste
 CT1 - Ao listar as cotações sem passar nenhum data deverá receber uma mensagem informando a obrigatoriedade do campo data. :white_check_mark:
 
 CT2 - Ao listar as cotações e passa a data inicial menor que a datafinal, deverá receber uma mensagem informando data inválida. :white_check_mark:
