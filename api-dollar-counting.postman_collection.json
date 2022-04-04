@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "5cfebfc1-b677-4e55-9825-79024917e403",
+		"name": "api-dollar-counting",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "migrar",
+			"item": [
+				{
+					"name": "Migrar a cotação conforme a data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/cotacoes/migrar?dataCotacao=01-01-2022",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cotacoes",
+								"migrar"
+							],
+							"query": [
+								{
+									"key": "dataCotacao",
+									"value": "01-01-2022"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Migrar a cotação com data inválida",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/cotacoes/migrar?dataCotacao=35-01-2022",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cotacoes",
+								"migrar"
+							],
+							"query": [
+								{
+									"key": "dataCotacao",
+									"value": "35-01-2022"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "pesquisar",
+			"item": [
+				{
+					"name": "Pesquisar a cotação conforme a data inicio e data fim",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/cotacoes/pesquisar?dataInicial=02-03-2022&dataFinal=01-04-2022",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cotacoes",
+								"pesquisar"
+							],
+							"query": [
+								{
+									"key": "dataInicial",
+									"value": "02-03-2022"
+								},
+								{
+									"key": "dataFinal",
+									"value": "01-04-2022"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pesquisar a cotação com data inválida",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/cotacoes/pesquisar?dataInicial=34-03-2022&dataFinal=01-04-2022",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cotacoes",
+								"pesquisar"
+							],
+							"query": [
+								{
+									"key": "dataInicial",
+									"value": "34-03-2022"
+								},
+								{
+									"key": "dataFinal",
+									"value": "01-04-2022"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pesquisar a cotação com data inicial maior que a data final",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/cotacoes/pesquisar?dataInicial=01-03-2022&dataFinal=01-02-2022",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cotacoes",
+								"pesquisar"
+							],
+							"query": [
+								{
+									"key": "dataInicial",
+									"value": "01-03-2022"
+								},
+								{
+									"key": "dataFinal",
+									"value": "01-02-2022"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pesquisar a cotação com o intervalo maior que 30 dias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/cotacoes/pesquisar?dataInicial=01-01-2022&dataFinal=28-02-2022",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cotacoes",
+								"pesquisar"
+							],
+							"query": [
+								{
+									"key": "dataInicial",
+									"value": "01-01-2022"
+								},
+								{
+									"key": "dataFinal",
+									"value": "28-02-2022"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
