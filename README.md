@@ -101,3 +101,5 @@ Clean architecture
 - Spring Cloud Starter Feign
 - Spring Doc OpenApi
 - Lombok
+#### Collection Postman
+[api-dollar-counting.postman_collection.json](https://github.com/diegodmmorais/api-dollar-counting/blob/main/api-dollar-counting.postman_collection.json)
