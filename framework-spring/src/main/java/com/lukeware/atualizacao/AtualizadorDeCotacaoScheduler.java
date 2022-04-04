@@ -24,11 +24,12 @@ public class AtualizadorDeCotacaoScheduler {
 
   /**
    * Cofiguração padrão para atualizar a cotação diariamente, está, atualizar de segunda a sexta as 18:30
+   *
    * @throws Exception
    */
   @Async
   @Scheduled(cron = "${aplicacao.atualizarCotacao.scheduled.cron:0 30 18 ? * MON,TUE,WED,THU,FRI}")
-  public void atualizarCotacao() throws Exception {
+  public void atualizarCotacao() {
     try {
       migradorCotacaoController.migrar(LocalDate.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
     } catch (Exception exception) {

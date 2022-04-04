@@ -1,3 +1,4 @@
+# Configuração da conexão com o banco de dados mongo
 spring:
   data:
     mongodb:
@@ -5,10 +6,12 @@ spring:
       password: admin123
       uri: mongodb://admin:admin123@127.0.0.1:27017/lukeware?authSource=admin
 
+# Configuração do log
 logging:
   level:
     com.lukeware.*: DEBUG
 
+# Configuração do conector banco central
 feign:
   client:
     config:
@@ -25,3 +28,11 @@ aplicacao:
   atualizarCotacao:
     scheduled:
       cron: 0 30 18 ? * MON,TUE,WED,THU,FRI
+
+# Configuracao documentação open api
+springdoc:
+  swagger-ui:
+    path: /api/documentacao/documentacao.html
+  api-docs:
+    path: /api/documentacao/swagger
+
