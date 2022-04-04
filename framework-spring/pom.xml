@@ -17,6 +17,7 @@
     <lombok.version>1.18.22</lombok.version>
     <spring-cloud-starter-feign.version>1.4.7.RELEASE</spring-cloud-starter-feign.version>
     <spring-boot-maven-plugin.mainClass>com.lukeware.Application</spring-boot-maven-plugin.mainClass>
+    <project.name>cotacao-api</project.name>
   </properties>
 
   <dependencyManagement>
@@ -50,6 +51,11 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.micrometer</groupId>
+      <artifactId>micrometer-registry-prometheus</artifactId>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.springframework.cloud</groupId>

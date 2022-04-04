@@ -32,7 +32,7 @@ services:
       - "8081:8081"
 
   cotacao-api:
-    image: cotacao-api:rc.1
+    image: cotacao-api:rc.3
     build: ./framework-spring
     container_name: cotacao-api
     links:
@@ -42,6 +42,35 @@ services:
       - "SPRING_PROFILES_ACTIVE=prod"
     ports:
       - "8080:8080"
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    restart: always
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+
+  grafana:
+    image: grafana/grafana:3.0.1
+    container_name: grafana
+    restart: always
+    ports:
+      - "3000:3000"
+    links:
+      - prometheus
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=pass
+    volumes:
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      - prometheus
+
+volumes:
+  grafana_data: {}
 
 networks:
   default:
