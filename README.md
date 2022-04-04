@@ -79,11 +79,11 @@ Para executar a aplicação é necessário como pré-requisito ter em usa máqui
 Obs. Não temos como objetivo encinar a instalação dos itens acima.
 
 Execute o comando abaixo:
-`` mvn clean install && docker-compose up -d ``
-#Documentação
+``` mvn clean install && docker-compose up -d ```
+
+# Documentação
 Link documentação open api: http://localhost:8080/api/documentacao/swagger
 Link swagger: http://localhost:8080/api/documentacao/swagger-ui/index.html
 
-mvn clean install && docker-compose up -d
-
-http://localhost:8081/db/lukeware/
+# Acessar banco de dados
+Link do banco de dados http://localhost:8081/db/lukeware/
