@@ -79,7 +79,7 @@ Para executar a aplicação é necessário como pré-requisito ter em usa máqui
 
 Obs. Não temos como objetivo encinar a instalação dos itens acima.
 
-Execute o comando abaixo:
+## Execute o comando a seguir:
 ``` mvn clean install && docker-compose up -d ```
 
 # Documentação
