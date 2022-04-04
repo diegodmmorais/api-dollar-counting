@@ -19,3 +19,9 @@ feign:
   cotacaoProxy:
     name: IPesquisadorCotacaoProxy
     url: https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/
+
+# Cofiguração padrão para atualizar a cotação diariamente, está, atualizar de segunda a sexta as 18:30
+aplicacao:
+  atualizarCotacao:
+    scheduled:
+      cron: 0 30 18 ? * MON,TUE,WED,THU,FRI
