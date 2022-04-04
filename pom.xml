@@ -74,6 +74,8 @@
             <exclude>**/*Exception.*</exclude>
             <exclude>**/*Proxy.*</exclude>
             <exclude>**/*Repository.*</exclude>
+            <exclude>**/*Application.*</exclude>
+            <exclude>**/*Mapper.*</exclude>
           </excludes>
         </configuration>
         <executions>

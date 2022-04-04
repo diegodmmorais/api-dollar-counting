@@ -15,11 +15,10 @@ import java.time.LocalDateTime;
 /**
  * @author Diego Morais
  */
+@Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-@EqualsAndHashCode
-@Builder
 @Document("cotacoes")
 public class CotacaoMapper {
   @Id
