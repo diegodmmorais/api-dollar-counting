@@ -14,16 +14,16 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/cotacoes")
-public class PesquisadorCotacaoResource {
+class PesquisadorCotacaoResource {
 
   private final IPesquisadorCotacaoController pesquisadorCotacaoController;
 
-  public PesquisadorCotacaoResource(IPesquisadorCotacaoController pesquisadorCotacaoController) {
+  PesquisadorCotacaoResource(IPesquisadorCotacaoController pesquisadorCotacaoController) {
     this.pesquisadorCotacaoController = pesquisadorCotacaoController;
   }
 
   @GetMapping("/pesquisar")
-  public List<CotacaoResponse> pesquisar(@RequestParam String dataInicial, @RequestParam String dataFinal) {
+  List<CotacaoResponse> pesquisar(@RequestParam String dataInicial, @RequestParam String dataFinal) {
     return pesquisadorCotacaoController.pesquisar(dataInicial, dataFinal);
   }
 }
