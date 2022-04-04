@@ -1,0 +1,44 @@
+# Configuração da conexão com o banco de dados mongo
+spring:
+  data:
+    mongodb:
+      host: mongo
+      username: admin
+      password: admin123
+      port: 27017
+      database: lukeware
+      repositories:
+        enabled: true
+      authentication-database: admin
+
+# Configuração do log
+logging:
+  level:
+    com.lukeware.*: DEBUG
+
+# Configuração do conector banco central
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
+  cotacaoProxy:
+    name: IPesquisadorCotacaoProxy
+    url: https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/
+
+# Cofiguração padrão para atualizar a cotação diariamente, está, atualizar de segunda a sexta as 18:30
+aplicacao:
+  atualizarCotacao:
+    scheduled:
+      cron: 0 30 18 ? * MON,TUE,WED,THU,FRI
+
+# Configuracao documentação open api
+springdoc:
+  version: 1.0v
+  swagger-ui:
+    path: /api/documentacao/documentacao.html
+  api-docs:
+    path: /api/documentacao/swagger
+

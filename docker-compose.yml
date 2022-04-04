@@ -21,13 +21,27 @@ services:
     container_name: mongo-express
     image: mongo-express
     restart: always
-    ports:
-      - 8081:8081
+    links:
+      - mongo
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: admin
       ME_CONFIG_MONGODB_ADMINPASSWORD: admin123
       ME_CONFIG_MONGODB_PORT: 27017
       ME_CONFIG_MONGODB_URL: mongodb://admin:admin123@mongo:27017/
+    ports:
+      - "8081:8081"
+
+  cotacao-api:
+    image: cotacao-api:rc.1
+    build: ./framework-spring
+    container_name: cotacao-api
+    links:
+      - mongo
+    restart: always
+    environment:
+      - "SPRING_PROFILES_ACTIVE=prod"
+    ports:
+      - "8080:8080"
 
 networks:
   default:

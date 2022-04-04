@@ -1,0 +1,5 @@
+# Configuração do conector banco central
+feign:
+  cotacaoProxy:
+    name: IPesquisadorCotacaoProxy
+    url: https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/
