@@ -7,13 +7,13 @@ Requisitos
 1. Buscar a contação do dólar na API externa a seguir: https://dadosabertos.bcb.gov.br/dataset/dolar-americano-usd-todos-os-boletins-diarios  :white_check_mark:
 1. Gravar a contação no banco de dados:white_check_mark:
 	1. O banco de dados pode ser postgre, mysql, mongo, ficando a escolha:white_check_mark:
-	1. Os dados que deveram ser salvos no banco de dados serão: 
-		1. **id da requisição**  :white_check_mark:
-		1. **timestamp da requisição**  :white_check_mark:
-		1. **Data da cotação do dolar**  :white_check_mark:
-		1. **Cotação de compra**  :white_check_mark:
-		1. **Cotação de venda**  :white_check_mark:
-		1. **Data e Hora da Cotação**  :white_check_mark:
+	1. Os dados que deveram ser salvos no banco de dados serão:  :white_check_mark:
+		1. **id da requisição**
+		1. **timestamp da requisição**
+		1. **Data da cotação do dolar**
+		1. **Cotação de compra**
+		1. **Cotação de venda**
+		1. **Data e Hora da Cotação**
 1. A API deverá estar documentada com Swagger  :white_check_mark:
 1. Monitoração com Prometheus e Grafana exibindo métricas da API, do DB e da infra. :white_large_square:
 1. Tracing (Jaeger):white_large_square:
