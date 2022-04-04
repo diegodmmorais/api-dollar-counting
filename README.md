@@ -107,3 +107,6 @@ Clean architecture
 #### Schedule
 A classe responsável por orquestrar o agendamento de atualizar cotação dolar do dia
 [AtualizadorDeCotacaoScheduler.java](https://github.com/diegodmmorais/api-dollar-counting/blob/main/framework-spring/src/main/java/com/lukeware/atualizacao/AtualizadorDeCotacaoScheduler.java)
+```java
+@Scheduled(cron = "${aplicacao.atualizarCotacao.scheduled.cron:0 30 18 ? * MON,TUE,WED,THU,FRI}")
+```
