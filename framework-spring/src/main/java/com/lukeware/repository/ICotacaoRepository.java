@@ -1,5 +1,6 @@
 package com.lukeware.repository;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
@@ -14,5 +15,5 @@ public interface ICotacaoRepository extends MongoRepository<CotacaoMapper, Strin
   Optional<CotacaoMapper> findByDataCotacao(LocalDate dataCotacao);
 
   @Query("{'dataCotacao' : { $gte: ?0, $lte: ?1 }}")
-  List<CotacaoMapper> findByDataCotacao(LocalDate dataInicial, LocalDate dataFinal);
+  List<CotacaoMapper> findByDataCotacao(LocalDate dataInicial, LocalDate dataFinal, Sort sort);
 }

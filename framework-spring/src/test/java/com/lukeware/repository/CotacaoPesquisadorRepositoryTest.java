@@ -78,7 +78,9 @@ class CotacaoPesquisadorRepositoryTest {
                                            .build();
     final var cotacaoMappers = Stream.of(cotacaoMapper).collect(Collectors.toList());
 
-    Mockito.when(cotacaoRepository.findByDataCotacao(Mockito.any(), Mockito.any())).thenReturn(cotacaoMappers);
+    Mockito.when(cotacaoRepository.findByDataCotacao(Mockito.any(),
+                                                     Mockito.any(),
+                                                     Mockito.any())).thenReturn(cotacaoMappers);
 
     final var responseOptional = cotacaoPesquisadorRepository.pesquisarPorData("01-04-2022", "12-04-2022");
 

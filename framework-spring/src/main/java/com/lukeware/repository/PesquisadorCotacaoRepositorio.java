@@ -2,6 +2,7 @@ package com.lukeware.repository;
 
 import com.lukeware.cotacao.dto.CotacaoDataAccessResponse;
 import com.lukeware.cotacao.repository.ICotacaoPesquisadorRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
@@ -32,7 +33,7 @@ public class PesquisadorCotacaoRepositorio implements ICotacaoPesquisadorReposit
   public List<CotacaoDataAccessResponse> pesquisarPorData(String dataIncial, String dataFinal) {
     final var dataInicialCotacao = LocalDate.parse(dataIncial, FORMATTER);
     final var dataFinalCotacao = LocalDate.parse(dataFinal, FORMATTER);
-    return this.cotacaoRepository.findByDataCotacao(dataInicialCotacao, dataFinalCotacao)
+    return this.cotacaoRepository.findByDataCotacao(dataInicialCotacao, dataFinalCotacao, Sort.by(Sort.Order.desc("dataCotacao")))
                                  .stream()
                                  .map(this::toResponse)
                                  .collect(Collectors.toList());
