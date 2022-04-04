@@ -15,8 +15,8 @@ Requisitos
 		1. **Cotação de venda**  :white_check_mark:
 		1. **Data e Hora da Cotação**  :white_check_mark:
 1. A API deverá estar documentada com Swagger  :white_check_mark:
-1. Monitoração com Prometheus e Grafana exibindo métricas da API, do DB e da infra.
-1. Tracing (Jaeger)
+1. Monitoração com Prometheus e Grafana exibindo métricas da API, do DB e da infra. :white_large_square:
+1. Tracing (Jaeger):white_large_square:
 1. Testes automatizados efetivos:white_check_mark:
 1. Containerização da aplicação Docker/docker-compose :white_check_mark:
 
@@ -49,18 +49,11 @@ Critério de aceite.
 
 
 #### Casos de teste
-CT1 - Ao listar as cotações sem passar nenhum data deverá receber uma mensagem informando a obrigatoriedade do campo data
-
-CT2 - Ao listar as cotações e passa a data inicial menor que a datafinal, deverá receber uma mensagem informando data inválida.
-
-
-CT3 - Ao listar as contações passando as datas corretas, deverá retornar uma lista de cotação.
-
-
-CT4 - Validar se o agendamento de atualização de cotações busca a contação do dia sendo de segunda a sexta as 18h 30m através dos logs da aplicação.
-
-
-CT5 - Validar se os dados da API não estão inconsistentes.
+CT1 - Ao listar as cotações sem passar nenhum data deverá receber uma mensagem informando a obrigatoriedade do campo data. :white_check_mark:
+CT2 - Ao listar as cotações e passa a data inicial menor que a datafinal, deverá receber uma mensagem informando data inválida. :white_check_mark:
+CT3 - Ao listar as contações passando as datas corretas, deverá retornar uma lista de cotação. :white_check_mark:
+CT4 - Validar se o agendamento de atualização de cotações busca a contação do dia sendo de segunda a sexta as 18h 30m através dos logs da aplicação. :white_check_mark:
+CT5 - Validar se os dados da API não estão inconsistentes. :white_check_mark:
 
 
 http://localhost:8080/api/documentacao/swagger
