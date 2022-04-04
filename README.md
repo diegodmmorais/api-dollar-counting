@@ -76,6 +76,7 @@ Para executar a aplicação é necessário como pré-requisito ter em usa máqui
 - docker
 - docker compose
 - Java versão 11 ou maior
+
 Obs. Não temos como objetivo encinar a instalação dos itens acima.
 
 Execute o comando abaixo:
