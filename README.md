@@ -84,6 +84,7 @@ Execute o comando abaixo:
 
 # Documentação
 Link documentação open api: http://localhost:8080/api/documentacao/swagger
+
 Link swagger: http://localhost:8080/api/documentacao/swagger-ui/index.html
 
 # Acessar banco de dados
