@@ -57,7 +57,7 @@ services:
       - cotacao-api
 
   grafana:
-    image: grafana/grafana:3.0.1
+    image: grafana/grafana
     container_name: grafana
     restart: always
     ports:
