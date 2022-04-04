@@ -22,7 +22,7 @@ Requisitos
 
 
 *Obs. não é obrigatório a criação do front, pode ser utilizado o postman ou o swagger para os testes.*
-
+*Obs. Não existe cotação nos finais de semana.*
 
 ## Critérios de aceite
 ### História 1
