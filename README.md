@@ -59,7 +59,7 @@ CT3 - Ao listar as contações passando as datas corretas, deverá retornar uma 
 CT4 - Validar se o agendamento de atualização de cotações busca a contação do dia sendo de segunda a sexta as 18h 30m através dos logs da aplicação. :white_check_mark:
 
 CT5 - Validar se os dados da API não estão inconsistentes. :white_check_mark:
-```
+```json
 [
     {
         "cotacaoCompra": 5.0507,
@@ -81,7 +81,9 @@ Para executar a aplicação é necessário como pré-requisito ter em usa máqui
 Obs. Não temos como objetivo encinar a instalação dos itens acima.
 
 ## Execute o comando a seguir:
-``` mvn clean install && docker-compose up -d ```
+```cmd
+mvn clean install && docker-compose up -d
+```
 
 # Documentação
 Link documentação open api: http://localhost:8080/api/documentacao/swagger
