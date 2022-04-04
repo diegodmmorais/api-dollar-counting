@@ -58,11 +58,31 @@ CT3 - Ao listar as contações passando as datas corretas, deverá retornar uma 
 CT4 - Validar se o agendamento de atualização de cotações busca a contação do dia sendo de segunda a sexta as 18h 30m através dos logs da aplicação. :white_check_mark:
 
 CT5 - Validar se os dados da API não estão inconsistentes. :white_check_mark:
+```
+[
+    {
+        "cotacaoCompra": 5.0507,
+        "cotacaoVenda": 5.0513,
+        "dataHoraCotacao": "2022-03-10T19:48:39.068",
+        "dataCotacao": "2022-03-10",
+        "tempoDaRequisicao": "2022-04-04T02:19:44.037"
+    }
+]
+```
 
+# Implantação
+Para executar a aplicação é necessário como pré-requisito ter em usa máquina instalado:
+- maven 
+- docker
+- docker compose
+- Java versão 11 ou maior
+Obs. Não temos como objetivo encinar a instalação dos itens acima.
 
-
-http://localhost:8080/api/documentacao/swagger
-http://localhost:8080/api/documentacao/swagger-ui/index.html
+Execute o comando abaixo:
+`` mvn clean install && docker-compose up -d ``
+#Documentação
+Link documentação open api: http://localhost:8080/api/documentacao/swagger
+Link swagger: http://localhost:8080/api/documentacao/swagger-ui/index.html
 
 mvn clean install && docker-compose up -d
 
