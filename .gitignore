@@ -30,3 +30,7 @@ hs_err_pid*
 /framework-spring/target/
 
 .DS_Store
+/interface-adapter/.DS_Store
+/framework-spring/.DS_Store
+/use-cases/.DS_Store
+/entities/.DS_Store
