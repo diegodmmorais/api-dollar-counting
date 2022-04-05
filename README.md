@@ -15,7 +15,7 @@ Requisitos
 		1. **Cotação de venda**
 		1. **Data e Hora da Cotação**
 1. A API deverá estar documentada com Swagger  :white_check_mark:
-1. Monitoração com Prometheus e Grafana exibindo métricas da API, do DB e da infra. :white_large_square:
+1. Monitoração com Prometheus e Grafana exibindo métricas da API, do DB e da infra. :white_check_mark:
 1. Tracing (Jaeger):white_large_square:
 1. Testes automatizados efetivos:white_check_mark:
 1. Containerização da aplicação Docker/docker-compose :white_check_mark:
@@ -110,3 +110,9 @@ A classe responsável por orquestrar o agendamento de atualizar cotação dolar 
 ```java
 @Scheduled(cron = "${aplicacao.atualizarCotacao.scheduled.cron:0 30 18 ? * MON,TUE,WED,THU,FRI}")
 ```
+
+#### Prometheus e Grafana
+[Prometheus](http://localhost:9090/graph)
+[Grafana](http://localhost:9091/dashboard/)
+
+Obs. Não foi criado uma documentação de como configurar o grafana e o prometheus
