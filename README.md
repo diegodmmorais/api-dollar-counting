@@ -112,7 +112,8 @@ A classe responsável por orquestrar o agendamento de atualizar cotação dolar 
 ```
 
 #### Prometheus e Grafana
-Linck do Prometheus: [http://localhost:9090/graph](http://localhost:9090/graph)
-Linck do Grafana: [http://localhost:9091/dashboard](http://localhost:9091/dashboard)
+Linck do Prometheus: http://localhost:9090/graph
+
+Linck do Grafana: http://localhost:9091/dashboard
 
 Obs. Não foi criado uma documentação de como configurar o grafana e o prometheus
